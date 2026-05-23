@@ -8,6 +8,7 @@ import AuthLayout from "./layouts/AuthLayout";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ScrollToTop from "./components/ScrollToTop";
 import Loader from "./components/Loader";
+import { useDelayedLoader, DelayedSuspenseFallback, GlobalTopBarLoader } from "./lib/loadingUtils";
 
 // Lazy-loaded pages
 const LandingPage = lazy(() => import("./pages/LandingPage"));
@@ -27,6 +28,7 @@ const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 function App() {
   const dispatch = useDispatch();
   const isInitializing = useSelector((state) => state.auth.isInitializing);
+  const showInitializingLoader = useDelayedLoader(isInitializing, { delay: 300, minimumShowTime: 500 });
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -35,14 +37,15 @@ function App() {
     }
   }, [dispatch]);
 
-  if (isInitializing) {
+  if (showInitializingLoader) {
     return <Loader />;
   }
 
   return (
     <Router>
+      <GlobalTopBarLoader />
       <ScrollToTop />
-      <Suspense fallback={<Loader />}>
+      <Suspense fallback={<DelayedSuspenseFallback text="Calibrating premium boutique elements..." />}>
         <AnimatePresence mode="wait">
           <Routes>
             {/* Public Layout */}
