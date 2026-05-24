@@ -24,6 +24,7 @@ const OrderTracking = lazy(() => import("./pages/OrderTracking"));
 const CategoriesPage = lazy(() => import("./pages/CategoriesPage"));
 const SellersPage = lazy(() => import("./pages/SellersPage"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
+const ProfilePage = lazy(() => import("./pages/ProfilePage"));
 
 function App() {
   const dispatch = useDispatch();
@@ -61,6 +62,14 @@ function App() {
                 element={
                   <ProtectedRoute roles={["buyer", "seller", "admin"]}>
                     <OrderTracking />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/profile"
+                element={
+                  <ProtectedRoute roles={["buyer", "seller", "admin"]}>
+                    <ProfilePage />
                   </ProtectedRoute>
                 }
               />
