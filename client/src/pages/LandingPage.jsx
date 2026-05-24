@@ -29,8 +29,8 @@ const FALLBACK_PRODUCTS = [
   {
     _id: "f1",
     name: "SHADOW DRIP",
-    price: 89.00,
-    originalPrice: 120.00,
+    price: 7400.00,
+    originalPrice: 9900.00,
     category: "Fashion",
     rating: 4.9,
     numReviews: 412,
@@ -42,8 +42,8 @@ const FALLBACK_PRODUCTS = [
   {
     _id: "f2",
     name: "URBAN PHANTOM",
-    price: 89.00,
-    originalPrice: 120.00,
+    price: 7400.00,
+    originalPrice: 9900.00,
     category: "Fashion",
     rating: 4.8,
     numReviews: 289,
@@ -55,8 +55,8 @@ const FALLBACK_PRODUCTS = [
   {
     _id: "f3",
     name: "NEON REBELLION",
-    price: 89.00,
-    originalPrice: 120.00,
+    price: 7400.00,
+    originalPrice: 9900.00,
     category: "Fashion",
     rating: 4.7,
     numReviews: 354,
@@ -68,8 +68,8 @@ const FALLBACK_PRODUCTS = [
   {
     _id: "f4",
     name: "CYBERPUNK ANORAK",
-    price: 180.00,
-    originalPrice: 240.00,
+    price: 14900.00,
+    originalPrice: 19900.00,
     category: "Fashion",
     rating: 4.9,
     numReviews: 120,
@@ -81,8 +81,8 @@ const FALLBACK_PRODUCTS = [
   {
     _id: "f5",
     name: "KINETIC RUNNERS",
-    price: 210.00,
-    originalPrice: 290.00,
+    price: 17400.00,
+    originalPrice: 24100.00,
     category: "Accessories",
     rating: 4.8,
     numReviews: 184,
@@ -94,7 +94,7 @@ const FALLBACK_PRODUCTS = [
   {
     _id: "f6",
     name: "CORE WATCHCAP",
-    price: 35.00,
+    price: 2900.00,
     category: "Accessories",
     rating: 4.6,
     numReviews: 92,
@@ -365,10 +365,13 @@ const LandingPage = () => {
               animate={{ opacity: index === activeSlide ? 1 : 0 }}
               transition={{ duration: 0.8, ease: "easeInOut" }}
             >
-              <img
+              <motion.img
                 src={slide.image}
                 alt={slide.heading}
-                className="w-full h-full object-cover object-center scale-[1.01]"
+                className="w-full h-full object-cover object-center"
+                initial={{ scale: 1.01 }}
+                animate={{ scale: index === activeSlide ? 1.08 : 1.01 }}
+                transition={{ duration: 7, ease: "linear" }}
               />
               {/* Double Gradient Overlay for outstanding text contrast */}
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/15" />
@@ -633,7 +636,7 @@ const LandingPage = () => {
                     <div className="min-w-0">
                       <span className="text-[9px] font-bold text-[#e1dcc9]/60 uppercase">{item.category?.name || item.category}</span>
                       <p className="text-xs font-semibold text-foreground truncate mt-0.5 group-hover:text-[#e1dcc9] transition-colors">{getProductTitle(item)}</p>
-                      <p className="text-xs font-bold text-[#e1dcc9] mt-1">${item.price}</p>
+                      <p className="text-xs font-bold text-[#e1dcc9] mt-1">₹{Math.round(item.price).toLocaleString("en-IN")}</p>
                     </div>
                   </Link>
                 ))}
@@ -666,7 +669,7 @@ const LandingPage = () => {
                     <div className="min-w-0">
                       <span className="text-[9px] font-bold text-[#e1dcc9]/60 uppercase">{item.category?.name || item.category}</span>
                       <p className="text-xs font-semibold text-foreground truncate mt-0.5 group-hover:text-[#e1dcc9] transition-colors">{getProductTitle(item)}</p>
-                      <p className="text-xs font-bold text-[#e1dcc9] mt-1">${item.price}</p>
+                      <p className="text-xs font-bold text-[#e1dcc9] mt-1">₹{Math.round(item.price).toLocaleString("en-IN")}</p>
                     </div>
                   </Link>
                 ))}
@@ -699,7 +702,7 @@ const LandingPage = () => {
                     <div className="min-w-0">
                       <span className="text-[9px] font-bold text-[#e1dcc9]/60 uppercase">{item.category?.name || item.category}</span>
                       <p className="text-xs font-semibold text-foreground truncate mt-0.5 group-hover:text-[#e1dcc9] transition-colors">{getProductTitle(item)}</p>
-                      <p className="text-xs font-bold text-[#e1dcc9] mt-1">${item.price}</p>
+                      <p className="text-xs font-bold text-[#e1dcc9] mt-1">₹{Math.round(item.price).toLocaleString("en-IN")}</p>
                     </div>
                   </Link>
                 ))}
@@ -732,7 +735,7 @@ const LandingPage = () => {
                     <div className="min-w-0">
                       <span className="text-[9px] font-bold text-[#e1dcc9]/60 uppercase">{item.category?.name || item.category}</span>
                       <p className="text-xs font-semibold text-foreground truncate mt-0.5 group-hover:text-[#e1dcc9] transition-colors">{getProductTitle(item)}</p>
-                      <p className="text-xs font-bold text-[#e1dcc9] mt-1">${item.price}</p>
+                      <p className="text-xs font-bold text-[#e1dcc9] mt-1">₹{Math.round(item.price).toLocaleString("en-IN")}</p>
                     </div>
                   </Link>
                 ))}
@@ -765,7 +768,7 @@ const LandingPage = () => {
                     <div className="min-w-0">
                       <span className="text-[9px] font-bold text-[#e1dcc9]/60 uppercase">{item.category?.name || item.category}</span>
                       <p className="text-xs font-semibold text-foreground truncate mt-0.5 group-hover:text-[#e1dcc9] transition-colors">{getProductTitle(item)}</p>
-                      <p className="text-xs font-bold text-[#e1dcc9] mt-1">${item.price}</p>
+                      <p className="text-xs font-bold text-[#e1dcc9] mt-1">₹{Math.round(item.price).toLocaleString("en-IN")}</p>
                     </div>
                   </Link>
                 ))}
@@ -820,7 +823,7 @@ const LandingPage = () => {
               <motion.div
                 variants={fadeUp}
                 custom={3}
-                className="flex items-center gap-4"
+                className="flex flex-col sm:flex-row items-center gap-4"
               >
                 {/* Countdown-style badges */}
                 <div className="flex gap-2">
