@@ -42,6 +42,16 @@ const getOrderById = asyncHandler(async (req, res) => {
     throw new ApiError(403, "Access denied.");
   }
 
+  // Sellers can only see orders containing at least one of their items
+  if (req.user.role === "seller") {
+    const hasSellerItem = order.items.some(
+      (item) => item.sellerId.toString() === req.user._id.toString()
+    );
+    if (!hasSellerItem) {
+      throw new ApiError(403, "Access denied. This order does not contain your products.");
+    }
+  }
+
   return new ApiResponse(200, "Order fetched.", order).send(res);
 });
 
@@ -54,7 +64,8 @@ const updateOrderStatus = asyncHandler(async (req, res) => {
     req.params.id,
     status,
     req.user.role,
-    note
+    note,
+    req.user._id
   );
   return new ApiResponse(200, `Order status updated to "${status}".`, order).send(res);
 });
