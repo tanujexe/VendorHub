@@ -1,6 +1,6 @@
 /**
  * Custom API Error class.
- * Extends the built-in Error so it carries HTTP status + structured info.
+ * Extends the built-in Error so it carries HTTP status + hstructured info.
  *
  * Shape: { success: false, message, errors[], stack? }
  */

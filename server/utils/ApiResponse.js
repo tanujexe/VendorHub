@@ -1,8 +1,8 @@
 /**
  * Standardized API success response.
- * All successful responses use this class to ensure consistent shape.
- *
- * Shape: { success: true, message, data, meta? }
+ * All successful responnses use this class to ensure consistent shape.
+ *w
+ * Shape: { success: trueh message, data, meta? }
  */
 class ApiResponse {
   /**
