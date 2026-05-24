@@ -104,6 +104,13 @@ app.get("/health", (_req, res) => {
   });
 });
 
+app.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "VendorHub APIs Running 🚀"
+  });
+});
+
 // ── 404 handler ───────────────────────────────────────────────────────────
 app.use((_req, res) => {
   res.status(404).json({ success: false, message: "Route not found." });
