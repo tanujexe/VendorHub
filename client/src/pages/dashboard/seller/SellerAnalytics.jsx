@@ -96,7 +96,7 @@ export default function SellerAnalytics() {
 
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight text-foreground flex items-center gap-2">
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground flex items-center gap-2">
             Store Analytics
             <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#e1dcc9]/10 border border-[#e1dcc9]/25 text-[#e1dcc9] flex items-center gap-1">
               <Sparkles className="w-3 h-3 text-[#e1dcc9]" /> Live Data

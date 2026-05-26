@@ -202,9 +202,9 @@ export default function SellerProducts() {
   return (
     <div className="space-y-6">
 
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight text-foreground">
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
             My Products
           </h1>
           <p className="text-muted-foreground mt-1 text-sm">
@@ -213,18 +213,18 @@ export default function SellerProducts() {
         </div>
         <button
           onClick={handleOpenAddModal}
-          className="px-4 py-2.5 rounded-xl bg-[#e1dcc9] text-black hover:bg-[#c9c4b2] active:scale-[0.98] transition-all font-semibold flex items-center gap-1.5 self-start sm:self-auto shadow-glow-sm"
+          className="px-4 py-2.5 rounded-xl bg-[#e1dcc9] text-black hover:bg-[#c9c4b2] active:scale-[0.98] transition-all font-semibold flex items-center gap-1.5 self-start sm:self-auto shadow-glow-sm text-sm"
         >
           <Plus className="w-4 h-4" /> Add Product
         </button>
       </div>
 
 
-      <div className="flex items-center gap-3 bg-secondary/35 border border-[#412d15]/30 rounded-xl p-3 max-w-md">
-        <Search className="w-4 h-4 text-muted-foreground" />
+      <div className="flex items-center gap-3 bg-secondary/35 border border-[#412d15]/30 rounded-xl p-3 w-full sm:max-w-md">
+        <Search className="w-4 h-4 text-muted-foreground shrink-0" />
         <input
           type="text"
-          placeholder="Filter products by title, category..."
+          placeholder="Filter by name or category..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="bg-transparent border-0 outline-none text-xs w-full text-foreground placeholder-muted-foreground"
@@ -232,16 +232,17 @@ export default function SellerProducts() {
       </div>
 
 
-      <div className="bg-[#1f150c]/10 border border-[#412d15]/30 rounded-2xl overflow-hidden shadow-premium">
+      {/* ── DESKTOP TABLE ── */}
+      <div className="hidden sm:block bg-[#1f150c]/10 border border-[#412d15]/30 rounded-2xl overflow-hidden shadow-premium">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="border-b border-[#412d15]/30 bg-black/40 text-muted-foreground text-[10px] uppercase font-bold tracking-widest">
-                <th className="py-4 px-6">Product Details</th>
-                <th className="py-4 px-6">Category</th>
-                <th className="py-4 px-6">Price</th>
-                <th className="py-4 px-6">Stock Status</th>
-                <th className="py-4 px-6 text-right">Actions</th>
+                <th className="py-4 px-5">Product</th>
+                <th className="py-4 px-5">Category</th>
+                <th className="py-4 px-5">Price</th>
+                <th className="py-4 px-5">Stock</th>
+                <th className="py-4 px-5 text-right">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-[#412d15]/10 bg-[#1f150c]/5">
@@ -251,7 +252,7 @@ export default function SellerProducts() {
                     <QueryErrorPlaceholder
                       error={error}
                       refetch={refetch}
-                      message="Failed to synchronize seller products inventory list."
+                      message="Failed to load your products."
                     />
                   </td>
                 </tr>
@@ -259,8 +260,8 @@ export default function SellerProducts() {
                 <tr>
                   <td colSpan="5" className="text-center py-12 text-xs text-muted-foreground">
                     <div className="flex justify-center gap-2 items-center">
-                      <div className="w-4 h-4 border-t-2 border-primary border-solid rounded-full animate-spin"></div>
-                      Fetching luxury inventory...
+                      <div className="w-4 h-4 border-t-2 border-primary border-solid rounded-full animate-spin" />
+                      Loading products...
                     </div>
                   </td>
                 </tr>
@@ -276,62 +277,55 @@ export default function SellerProducts() {
                 filteredProducts.map((product) => {
                   const isLowStock = product.stock <= 5;
                   const firstImage = product.images?.[0]?.url || "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=700&q=80";
-
                   return (
                     <tr
                       key={product._id}
-                      className="group hover:bg-[#412d15]/20 border-b border-[#412d15]/10 transition-colors duration-300"
+                      className="group hover:bg-[#412d15]/20 transition-colors duration-200"
                     >
-                      <td className="py-4 px-6">
+                      <td className="py-4 px-5">
                         <div className="flex items-center gap-3">
                           <img
                             src={firstImage}
                             alt={product.title}
-                            className="w-12 h-12 rounded-xl object-cover border border-[#412d15]/60 group-hover:scale-105 transition-transform duration-300"
+                            className="w-11 h-11 rounded-xl object-cover border border-[#412d15]/60 shrink-0 group-hover:scale-105 transition-transform duration-300"
                           />
                           <div className="min-w-0">
-                            <p className="text-xs font-bold text-foreground truncate max-w-[200px]">
-                              {product.title}
-                            </p>
-                            <p className="text-[10px] text-muted-foreground truncate max-w-[200px] mt-0.5">
-                              {product.description}
-                            </p>
+                            <p className="text-xs font-bold text-foreground truncate max-w-[180px]">{product.title}</p>
+                            <p className="text-[10px] text-muted-foreground truncate max-w-[180px] mt-0.5">{product.description}</p>
                           </div>
                         </div>
                       </td>
-                      <td className="py-4 px-6 text-xs text-muted-foreground font-medium">
+                      <td className="py-4 px-5">
                         <span className="bg-black/30 border border-[#e1dcc9]/10 px-2 py-1 rounded-md text-[10px] text-[#e1dcc9] font-bold">
                           {product.category?.name || "Uncategorized"}
                         </span>
                       </td>
-                      <td className="py-4 px-6 text-xs font-bold text-foreground">
+                      <td className="py-4 px-5 text-xs font-bold text-foreground">
                         ₹{Math.round(product.price).toLocaleString("en-IN")}
                       </td>
-                      <td className="py-4 px-6">
-                        <span
-                          className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-bold border ${
-                            isLowStock
-                              ? "bg-red-500/10 text-red-400 border-red-500/20"
-                              : "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
-                          }`}
-                        >
+                      <td className="py-4 px-5">
+                        <span className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-bold border ${
+                          isLowStock
+                            ? "bg-red-500/10 text-red-400 border-red-500/20"
+                            : "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
+                        }`}>
                           <span className={`w-1.5 h-1.5 rounded-full ${isLowStock ? "bg-red-500" : "bg-emerald-500 animate-pulse"}`} />
-                          {product.stock} in stock {isLowStock && "(Low)"}
+                          {product.stock} {isLowStock && "(Low)"}
                         </span>
                       </td>
-                      <td className="py-4 px-6 text-right">
+                      <td className="py-4 px-5 text-right">
                         <div className="flex items-center justify-end gap-1.5">
                           <button
                             onClick={() => handleOpenEditModal(product)}
-                            className="p-2 rounded-lg bg-[#412d15]/30 border border-[#e1dcc9]/5 hover:bg-[#e1dcc9]/15 hover:text-[#e1dcc9] text-muted-foreground transition-all duration-200"
-                            title="Edit Listing"
+                            className="p-2 rounded-lg bg-[#412d15]/30 border border-[#e1dcc9]/5 hover:bg-[#e1dcc9]/15 hover:text-[#e1dcc9] text-muted-foreground transition-all"
+                            title="Edit"
                           >
                             <Edit2 className="w-3.5 h-3.5" />
                           </button>
                           <button
                             onClick={() => handleDelete(product._id)}
-                            className="p-2 rounded-lg bg-red-950/15 border border-red-500/10 hover:bg-red-500/20 hover:text-red-400 text-muted-foreground transition-all duration-200"
-                            title="Delete/Archive"
+                            className="p-2 rounded-lg bg-red-950/15 border border-red-500/10 hover:bg-red-500/20 hover:text-red-400 text-muted-foreground transition-all"
+                            title="Delete"
                           >
                             <Trash2 className="w-3.5 h-3.5" />
                           </button>
@@ -344,6 +338,76 @@ export default function SellerProducts() {
             </tbody>
           </table>
         </div>
+      </div>
+
+      {/* ── MOBILE CARD LIST ── */}
+      <div className="sm:hidden space-y-3">
+        {isLoading && (
+          <div className="flex justify-center items-center gap-2 py-12 text-xs text-muted-foreground">
+            <div className="w-4 h-4 border-t-2 border-primary rounded-full animate-spin" />
+            Loading products...
+          </div>
+        )}
+        {error && (
+          <QueryErrorPlaceholder error={error} refetch={refetch} message="Failed to load your products." />
+        )}
+        {!isLoading && !error && filteredProducts.length === 0 && (
+          <div className="border border-dashed border-[#412d15] rounded-2xl text-center py-14 text-muted-foreground">
+            <Package className="w-9 h-9 mx-auto mb-2 opacity-30 text-[#e1dcc9]" />
+            <p className="text-xs font-semibold text-foreground">No products yet</p>
+            <p className="text-[10px] mt-0.5 text-muted-foreground/60">Tap "Add Product" to list your first item.</p>
+          </div>
+        )}
+        {!isLoading && !error && filteredProducts.map((product) => {
+          const isLowStock = product.stock <= 5;
+          const firstImage = product.images?.[0]?.url || "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=700&q=80";
+          return (
+            <div
+              key={product._id}
+              className="bg-[#1f150c]/20 border border-[#412d15]/40 rounded-2xl p-4"
+            >
+              <div className="flex items-start gap-3">
+                <img
+                  src={firstImage}
+                  alt={product.title}
+                  className="w-14 h-14 rounded-xl object-cover border border-[#412d15]/60 shrink-0"
+                />
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-bold text-foreground truncate">{product.title}</p>
+                  <p className="text-[10px] text-muted-foreground mt-0.5 line-clamp-2">{product.description}</p>
+                  <div className="flex flex-wrap items-center gap-1.5 mt-2">
+                    <span className="bg-black/30 border border-[#e1dcc9]/10 px-2 py-0.5 rounded-md text-[10px] text-[#e1dcc9] font-bold">
+                      {product.category?.name || "Uncategorized"}
+                    </span>
+                    <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold border ${
+                      isLowStock
+                        ? "bg-red-500/10 text-red-400 border-red-500/20"
+                        : "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
+                    }`}>
+                      <span className={`w-1.5 h-1.5 rounded-full ${isLowStock ? "bg-red-500" : "bg-emerald-500 animate-pulse"}`} />
+                      {product.stock} in stock
+                    </span>
+                  </div>
+                </div>
+                <p className="text-sm font-black text-foreground shrink-0">₹{Math.round(product.price).toLocaleString("en-IN")}</p>
+              </div>
+              <div className="flex gap-2 mt-3 pt-3 border-t border-[#412d15]/30">
+                <button
+                  onClick={() => handleOpenEditModal(product)}
+                  className="flex-1 py-2 rounded-xl bg-[#412d15]/30 border border-[#e1dcc9]/5 hover:bg-[#e1dcc9]/10 text-xs font-semibold text-[#e1dcc9] transition-all flex items-center justify-center gap-1.5"
+                >
+                  <Edit2 className="w-3.5 h-3.5" /> Edit
+                </button>
+                <button
+                  onClick={() => handleDelete(product._id)}
+                  className="flex-1 py-2 rounded-xl bg-red-950/15 border border-red-500/10 hover:bg-red-500/20 text-xs font-semibold text-red-400 transition-all flex items-center justify-center gap-1.5"
+                >
+                  <Trash2 className="w-3.5 h-3.5" /> Delete
+                </button>
+              </div>
+            </div>
+          );
+        })}
       </div>
 
 
