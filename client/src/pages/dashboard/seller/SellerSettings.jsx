@@ -37,11 +37,11 @@ export default function SellerSettings() {
     <div className="space-y-6 max-w-2xl">
 
       <div>
-        <h1 className="text-3xl font-bold tracking-tight text-foreground flex items-center gap-2">
+        <h1 className="text-3xl font-bold tracking-tight text-foreground">
           Store Settings
         </h1>
         <p className="text-muted-foreground mt-1 text-sm">
-          Update your store identity, profile credentials, and checkout security settings.
+          Update your store name, location, and account details.
         </p>
       </div>
 
@@ -58,7 +58,7 @@ export default function SellerSettings() {
         <form onSubmit={handleSave} className="space-y-4">
           <div className="space-y-1">
             <label className="text-[10px] font-bold tracking-wider text-muted-foreground uppercase flex items-center gap-1">
-              <Store className="w-3.5 h-3.5 text-muted-foreground" /> Store Identity
+              <Store className="w-3.5 h-3.5 text-muted-foreground" /> Store Name
             </label>
             <input
               type="text"
@@ -70,7 +70,7 @@ export default function SellerSettings() {
 
           <div className="space-y-1">
             <label className="text-[10px] font-bold tracking-wider text-muted-foreground uppercase flex items-center gap-1">
-              <MapPin className="w-3.5 h-3.5 text-muted-foreground" /> Shipping Hub Location
+              <MapPin className="w-3.5 h-3.5 text-muted-foreground" /> Store Location
             </label>
             <input
               type="text"
@@ -82,13 +82,13 @@ export default function SellerSettings() {
 
           <div className="p-4 rounded-xl bg-black/35 border border-[#412d15]/50 text-xs space-y-2">
             <h4 className="font-bold text-foreground flex items-center gap-1">
-              <Shield className="w-4 h-4 text-[#e1dcc9]" /> Cryptographic Seller Token
+              <Shield className="w-4 h-4 text-[#e1dcc9]" /> Account Verification
             </h4>
             <p className="text-[10px] text-muted-foreground">
-              Your profile is verified and protected under Web3 transaction logs. No actions are required.
+              Your seller account is verified and active on the platform.
             </p>
             <span className="text-[9px] text-[#e1dcc9] font-bold bg-[#e1dcc9]/10 px-2 py-0.5 border border-[#e1dcc9]/25 rounded block w-fit mt-1">
-              Status: SECURE & VERIFIED
+              Status: ACTIVE & VERIFIED
             </span>
           </div>
 

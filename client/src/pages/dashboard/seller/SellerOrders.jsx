@@ -87,7 +87,7 @@ export default function SellerOrders() {
           Incoming Orders
         </h1>
         <p className="text-muted-foreground mt-1 text-sm">
-          Track customer purchases, manage statuses, and orchestrate logistics pipelines.
+          Track customer purchases, update order status, and manage shipments.
         </p>
       </div>
 
@@ -99,8 +99,8 @@ export default function SellerOrders() {
               <tr className="border-b border-[#412d15]/30 bg-black/40 text-muted-foreground text-[10px] uppercase font-bold tracking-widest">
                 <th className="py-4 px-6">Order ID & Date</th>
                 <th className="py-4 px-6">Customer</th>
-                <th className="py-4 px-6">Net Earnings</th>
-                <th className="py-4 px-6">Fullfillment Status</th>
+                <th className="py-4 px-6">Your Earnings</th>
+                <th className="py-4 px-6">Fulfillment Status</th>
                 <th className="py-4 px-6 text-right">Actions</th>
               </tr>
             </thead>
@@ -182,7 +182,7 @@ export default function SellerOrders() {
                           onClick={() => setSelectedOrder(order)}
                           className="px-3 py-1.5 rounded-lg bg-[#412d15]/30 border border-[#e1dcc9]/5 hover:bg-[#e1dcc9]/10 text-xs font-semibold text-[#e1dcc9] transition-all flex items-center gap-1.5 ml-auto"
                         >
-                          <Eye className="w-3.5 h-3.5" /> View Timeline
+                          <Eye className="w-3.5 h-3.5" /> View Details
                         </button>
                       </td>
                     </tr>
@@ -225,9 +225,9 @@ export default function SellerOrders() {
                     <Sparkles className="w-4 h-4 text-[#e1dcc9]" />
                     <div>
                       <h3 className="font-bold text-foreground text-sm">
-                        AI Order Logistics Drawer
+                        Order Details
                       </h3>
-                      <p className="text-[10px] text-muted-foreground">Order ID: #{selectedOrder._id.toUpperCase()}</p>
+                      <p className="text-[10px] text-muted-foreground">Order #{selectedOrder._id.slice(-8).toUpperCase()}</p>
                     </div>
                   </div>
                   <button
@@ -282,7 +282,7 @@ export default function SellerOrders() {
 
 
                 <div className="space-y-4">
-                  <h4 className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">AI Tracking Timeline</h4>
+                  <h4 className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Order Timeline</h4>
                   <div className="relative pl-6 border-l-2 border-[#412d15] space-y-6">
                     {ORDER_STATUS_STEPS.map((status, index) => {
                       const isCompleted = ORDER_STATUS_STEPS.indexOf(selectedOrder.orderStatus) >= index;
@@ -314,7 +314,7 @@ export default function SellerOrders() {
                               {status}
                             </h5>
                             <span className="text-[9px] text-muted-foreground/60 block mt-0.5">
-                              {isCompleted ? "Pipeline Step Satisfied" : "Awaiting activation"}
+                              {isCurrent ? "Current Stage" : isCompleted ? "Completed" : "Upcoming"}
                             </span>
                           </div>
                         </div>
@@ -350,13 +350,13 @@ export default function SellerOrders() {
                       ) : (
                         <Truck className="w-4 h-4" />
                       )}
-                      Advance Pipeline to "{getNextStatus(selectedOrder.orderStatus)}" <ArrowRight className="w-3.5 h-3.5" />
+                      Advance to "{getNextStatus(selectedOrder.orderStatus)}" <ArrowRight className="w-3.5 h-3.5" />
                     </button>
                   </>
                 ) : (
-                  <div className="p-3.5 rounded-xl bg-[#412d15]/10 border border-[#412d15]/50 text-center text-xs text-muted-foreground flex items-center justify-center gap-1.5 font-bold">
-                    <CheckCircle className="w-4 h-4 text-emerald-400" /> Order Fulfillment Pipeline Complete
-                  </div>
+                    <div className="p-3.5 rounded-xl bg-[#412d15]/10 border border-[#412d15]/50 text-center text-xs text-muted-foreground flex items-center justify-center gap-1.5 font-bold">
+                      <CheckCircle className="w-4 h-4 text-emerald-400" /> Order Complete
+                    </div>
                 )}
               </div>
             </motion.div>

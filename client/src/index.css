@@ -86,7 +86,8 @@
   h5,
   h6 {
     font-family: 'Bebas Neue', 'Anton', 'Oswald', 'Space Grotesk', sans-serif;
-    letter-spacing: 0.19em;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
   }
 
 

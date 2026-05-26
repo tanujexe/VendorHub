@@ -1,14 +1,14 @@
 {
-  "name": "ai-vendor-marketplace-backend",
+  "name": "premium-vendor-marketplace-backend",
   "version": "1.0.0",
-  "description": "Production-grade AI-powered multi-vendor marketplace backend",
+  "description": "Production-grade premium multi-vendor marketplace backend",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
     "lint": "eslint ."
   },
-  "keywords": ["marketplace", "multi-vendor", "AI", "ecommerce"],
+  "keywords": ["marketplace", "multi-vendor", "premium", "ecommerce"],
   "author": "Marketplace Dev Team",
   "license": "MIT",
   "dependencies": {

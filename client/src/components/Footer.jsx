@@ -142,7 +142,7 @@ const Footer = () => {
                 <div className="absolute -bottom-1.5 left-0 w-6 h-[1px] bg-[#e1dcc9]/30" />
               </div>
               <p className="text-[11px] text-[#e1dcc9]/40 mt-1">
-                Receive private curations and AI-powered collection alerts.
+                Receive private curations and smart collection alerts.
               </p>
 
               <form

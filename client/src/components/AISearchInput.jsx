@@ -12,9 +12,9 @@ const AI_SYNONYMS = {
   shoe: "sneakers, running shoes, fashion shoes",
   audio: "headphones, earbuds, studio speakers",
   headphone: "noise-cancelling headphones, earbuds, audio gear",
-  watch: "smartwatches, fitness trackers, AI wearables",
+  watch: "smartwatches, fitness trackers, smart wearables",
   bag: "backpacks, sling bags, laptop carryalls",
-  gadget: "AI gadgets, smart devices, futuristic accessories",
+  gadget: "smart gadgets, smart devices, futuristic accessories",
 };
 
 
@@ -23,7 +23,7 @@ const TRENDING_SEARCHES = [
   "gaming laptop",
   "Android phone",
   "running shoes",
-  "AI gadgets",
+  "smart gadgets",
   "smartwatch",
 ];
 
@@ -31,7 +31,7 @@ const PLACEHOLDER_PHRASES = [
   "Search phone for smartphones, iPhones, Android...",
   "Search laptop for gaming laptops and ultrabooks...",
   "Search shoes for sneakers and running shoes...",
-  "Search AI gadgets for futuristic accessories...",
+  "Search smart gadgets for futuristic accessories...",
 ];
 
 export default function AISearchInput({ isMobile = false }) {
@@ -217,7 +217,7 @@ export default function AISearchInput({ isMobile = false }) {
               className="absolute right-1.5 top-1/2 -translate-y-1/2 h-7 px-3 rounded-lg bg-[#412d15] text-[#e1dcc9] border border-[#e1dcc9]/10 text-xs font-semibold hover:bg-[#e1dcc9] hover:text-black transition-all duration-300 flex items-center gap-1 shadow-sm"
             >
               <Sparkles className="w-3.5 h-3.5 text-[#e1dcc9]" />
-              <span>AI Search</span>
+              <span>Smart Search</span>
             </button>
           )}
         </div>
@@ -239,7 +239,7 @@ export default function AISearchInput({ isMobile = false }) {
               <div className="mb-3.5 p-3 rounded-lg bg-[#412d15]/50 border border-[#e1dcc9]/10 flex items-start gap-2.5">
                   <Sparkles className="w-4 h-4 text-[#e1dcc9] shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-xs text-muted-foreground font-medium leading-none">AI Synonym Recommendation</p>
+                  <p className="text-xs text-muted-foreground font-medium leading-none">Smart Search Recommendation</p>
                   <p className="text-sm font-semibold text-[#e1dcc9] mt-1.5">
                     Suggested query: <span className="underline italic decoration-[#e1dcc9]/30 cursor-pointer" onClick={() => performSearch(synonymMatch)}>"{synonymMatch}"</span>
                   </p>
@@ -250,7 +250,7 @@ export default function AISearchInput({ isMobile = false }) {
 
             {query.trim().length > 0 ? (
               <div className="space-y-1">
-                <p className="text-[10px] font-bold text-muted-foreground tracking-wider uppercase mb-1.5 px-2">AI Search Suggestions</p>
+                <p className="text-[10px] font-bold text-muted-foreground tracking-wider uppercase mb-1.5 px-2">Smart Suggestions</p>
                 {predictions.map((pred, idx) => (
                   <button
                     key={pred}

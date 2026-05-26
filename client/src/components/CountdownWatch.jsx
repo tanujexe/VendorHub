@@ -38,7 +38,7 @@ const CountdownWatch = ({ expiresAt }) => {
         </div>
         <div>
           <p className="text-[9px] uppercase tracking-[0.25em] font-bold text-[#e1dcc9]/70">Live Secure Drop</p>
-          <p className="text-xs font-semibold tracking-wide text-white/90">Exclusive AI Multi-Vendor Auction Closes In</p>
+          <p className="text-xs font-semibold tracking-wide text-white/90">Exclusive Premium Multi-Vendor Auction Closes In</p>
         </div>
       </div>
 

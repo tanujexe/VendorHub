@@ -204,18 +204,18 @@ export default function SellerProducts() {
 
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight text-foreground flex items-center gap-2">
-            Inventory & Catalog
+          <h1 className="text-3xl font-bold tracking-tight text-foreground">
+            My Products
           </h1>
           <p className="text-muted-foreground mt-1 text-sm">
-            Manage your listings, adjust pricing, and track live stock updates.
+            Manage your listings, adjust pricing, and track stock.
           </p>
         </div>
         <button
           onClick={handleOpenAddModal}
           className="px-4 py-2.5 rounded-xl bg-[#e1dcc9] text-black hover:bg-[#c9c4b2] active:scale-[0.98] transition-all font-semibold flex items-center gap-1.5 self-start sm:self-auto shadow-glow-sm"
         >
-          <Plus className="w-4 h-4" /> Add Premium Product
+          <Plus className="w-4 h-4" /> Add Product
         </button>
       </div>
 
@@ -268,8 +268,8 @@ export default function SellerProducts() {
                 <tr>
                   <td colSpan="5" className="text-center py-16 text-muted-foreground">
                     <Package className="w-10 h-10 mx-auto mb-3 opacity-30 text-[#e1dcc9]" />
-                    <p className="text-xs font-semibold text-foreground">No Premium Products Listed Yet</p>
-                    <p className="text-[10px] mt-0.5 text-muted-foreground/60">Tap "Add Premium Product" to launch your store catalog.</p>
+                    <p className="text-xs font-semibold text-foreground">No Products Yet</p>
+                    <p className="text-[10px] mt-0.5 text-muted-foreground/60">Click "Add Product" to list your first item.</p>
                   </td>
                 </tr>
               ) : (
@@ -371,7 +371,7 @@ export default function SellerProducts() {
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-[#e1dcc9]" />
                   <h3 className="text-lg font-bold text-foreground">
-                    {editingProduct ? "Refine Product Listing" : "Launch Premium Listing"}
+                    {editingProduct ? "Edit Product" : "Add Product"}
                   </h3>
                 </div>
                 <button
@@ -431,9 +431,9 @@ export default function SellerProducts() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <label className="text-[10px] font-bold tracking-wider text-muted-foreground uppercase">Simulate Retail Price (₹)</label>
+                    <label className="text-[10px] font-bold tracking-wider text-muted-foreground uppercase">Price (₹)</label>
                     <div className="relative">
-                      <IndianRupee className="w-3.5 h-3.5 text-muted-foreground absolute left-3.5 top-3" />
+                      <IndianRupee className="w-3.5 h-3.5 text-muted-foreground absolute left-3.5 top-3.5" />
                       <input
                         type="number"
                         name="price"
@@ -442,7 +442,7 @@ export default function SellerProducts() {
                         step="0.01"
                         value={formData.price}
                         onChange={handleInputChange}
-                        placeholder="199.99"
+                        placeholder="9990"
                         className="w-full bg-black/40 border border-[#412d15] rounded-xl pl-9 pr-3.5 py-2.5 text-xs text-foreground placeholder-muted-foreground/60 outline-none focus:border-[#e1dcc9]/50 transition-colors"
                       />
                     </div>
@@ -513,7 +513,7 @@ export default function SellerProducts() {
                     ) : (
                       <Sparkles className="w-3.5 h-3.5" />
                     )}
-                    {editingProduct ? "Update Premium Listing" : "Adopt & Launch"}
+                    {editingProduct ? "Update Product" : "Add Product"}
                   </button>
                 </div>
               </form>
@@ -551,7 +551,7 @@ export default function SellerProducts() {
                 Archive Product Listing
               </h3>
               <p className="text-xs text-muted-foreground mt-2 leading-relaxed max-w-sm mx-auto">
-                Are you sure you want to deactivate and archive this luxury product listing? You can safely reactivate it anytime through the platform administrative hub.
+                Are you sure you want to delete this product? This action cannot be undone.
               </p>
 
               <div className="flex items-center justify-center gap-3 mt-6">

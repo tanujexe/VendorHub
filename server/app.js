@@ -116,7 +116,7 @@ app.use("/api/recommendations", recommendationRoutes);
 app.get("/health", (_req, res) => {
   res.status(200).json({
     success: true,
-    message: "AI Vendor Marketplace API is running 🚀",
+    message: "Premium Multi-Vendor Marketplace API is running 🚀",
     environment: process.env.NODE_ENV,
     timestamp: new Date().toISOString(),
   });

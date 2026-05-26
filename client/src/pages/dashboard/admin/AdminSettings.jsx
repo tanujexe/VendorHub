@@ -34,11 +34,11 @@ export default function AdminSettings() {
     <div className="space-y-6 max-w-2xl">
 
       <div>
-        <h1 className="text-3xl font-bold tracking-tight text-foreground flex items-center gap-2">
-          Platform Parameters
+        <h1 className="text-3xl font-bold tracking-tight text-foreground">
+          System Settings
         </h1>
         <p className="text-muted-foreground mt-1 text-sm">
-          Adjust global commissions, configure security layers, and fine-tune AI recommendations criteria.
+          Manage platform commission rates and global system settings.
         </p>
       </div>
 
@@ -58,8 +58,8 @@ export default function AdminSettings() {
               <Percent className="w-4 h-4 text-[#e1dcc9]" />
             </div>
             <div>
-              <h3 className="font-bold text-foreground text-sm">Marketplace Commission Split</h3>
-              <p className="text-[10px] text-muted-foreground">Adjust global platform fee deducted from vendor earnings</p>
+              <h3 className="font-bold text-foreground text-sm">Marketplace Commission</h3>
+              <p className="text-[10px] text-muted-foreground">Set the platform fee deducted from each vendor sale</p>
             </div>
           </div>
 
@@ -68,7 +68,7 @@ export default function AdminSettings() {
             <div className="flex justify-between text-xs">
               <span className="text-muted-foreground font-semibold">Global Commission Split</span>
               <span className="text-[#e1dcc9] font-bold text-sm bg-[#e1dcc9]/10 px-2 py-0.5 border border-[#e1dcc9]/20 rounded">
-                {commissionRate}% Platform Fee
+                {commissionRate}% Fee
               </span>
             </div>
             <input
@@ -88,10 +88,10 @@ export default function AdminSettings() {
 
           <div className="p-4 rounded-xl bg-black/20 border border-[#e1dcc9]/5 text-xs space-y-2">
             <h4 className="font-bold text-foreground flex items-center gap-1.5">
-              <Shield className="w-4 h-4 text-[#e1dcc9]" /> Platform Integrity Shield
+              <Shield className="w-4 h-4 text-[#e1dcc9]" /> Commission Note
             </h4>
             <p className="text-[10px] text-muted-foreground">
-              Adjusting commission splits triggers cryptographic verification logs sent dynamically to all active vendors.
+              Updating the commission rate will apply to all new vendor orders going forward.
             </p>
           </div>
 
@@ -105,7 +105,7 @@ export default function AdminSettings() {
             ) : (
               <Sparkles className="w-3.5 h-3.5" />
             )}
-            Authorizesplit changes
+            Save Settings
           </button>
         </form>
       </div>

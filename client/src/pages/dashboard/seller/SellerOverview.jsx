@@ -119,7 +119,7 @@ export default function SellerOverview() {
   ];
 
   return (
-    <LoaderWrapper loading={isLoading} text="Analyzing merchant sales ledger..." subtitle="PREDICTIVE INTELLIGENCE CORE" minHeight="400px">
+    <LoaderWrapper loading={isLoading} text="Loading store data..." subtitle="SELLER PORTAL" minHeight="400px">
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -130,13 +130,13 @@ export default function SellerOverview() {
       <motion.div variants={itemVariants} className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h1 className="text-3xl font-bold tracking-tight text-foreground flex items-center gap-2">
-            Store Command Center
-            <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#e1dcc9]/10 border border-[#e1dcc9]/20 text-[#e1dcc9] flex items-center gap-1 shadow-glow-sm">
-              <Sparkles className="w-3 h-3 text-[#e1dcc9]" /> AI Projections Engaged
+            Store Overview
+            <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#e1dcc9]/10 border border-[#e1dcc9]/20 text-[#e1dcc9] flex items-center gap-1">
+              <Sparkles className="w-3 h-3 text-[#e1dcc9]" /> Live
             </span>
           </h1>
           <p className="text-muted-foreground mt-1 text-sm">
-            Real-time multi-vendor metrics, predictive inventory management, and competitor intelligence.
+            Your store stats, stock alerts, and smart pricing tools — all in one place.
           </p>
         </div>
       </motion.div>
@@ -190,13 +190,13 @@ export default function SellerOverview() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-[#e1dcc9] flex items-center gap-1.5">
-                    AI Smart Pricing Assistant
+                    Smart Pricing Tool
                   </h3>
-                  <p className="text-xs text-muted-foreground">Competitor intelligence & elasticity simulation</p>
+                  <p className="text-xs text-muted-foreground">Simulate prices and see demand impact</p>
                 </div>
               </div>
               <span className="text-[10px] font-bold tracking-widest text-[#e1dcc9]/40 uppercase bg-[#412d15]/30 px-2 py-0.5 border border-[#e1dcc9]/10 rounded-full">
-                Interactive Model
+                Interactive
               </span>
             </div>
 
@@ -243,24 +243,24 @@ export default function SellerOverview() {
             </div>
 
 
-            <div className="grid grid-cols-3 gap-3 md:gap-4 mt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 mt-6">
               <div className="p-3.5 rounded-xl bg-[#1f150c]/40 border border-[#412d15]/40 text-center">
-                <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider">AI Elastic Range</p>
+                <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider">Smart Elastic Range</p>
                 <p className="text-base md:text-lg font-bold text-foreground mt-1">
-                  ${minCompetitorPrice} - ${maxCompetitorPrice}
+                  ₹{minCompetitorPrice.toLocaleString("en-IN")} - ₹{maxCompetitorPrice.toLocaleString("en-IN")}
                 </p>
                 <span className="text-[9px] text-muted-foreground/60 block mt-0.5">Competitor Bounds</span>
               </div>
               <div className="p-3.5 rounded-xl bg-[#e1dcc9]/5 border border-[#e1dcc9]/10 text-center relative overflow-hidden group">
                 <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#e1dcc9] to-transparent animate-pulse" />
                 <p className="text-[10px] font-semibold text-[#e1dcc9] uppercase tracking-wider">Ideal Sweetspot</p>
-                <p className="text-base md:text-lg font-bold text-[#e1dcc9] mt-1">${suggestedPrice}</p>
+                <p className="text-base md:text-lg font-bold text-[#e1dcc9] mt-1">₹{suggestedPrice.toLocaleString("en-IN")}</p>
                 <span className="text-[9px] text-[#e1dcc9]/60 block mt-0.5">Optimal conversion</span>
               </div>
               <div className={`p-3.5 rounded-xl border text-center ${demandColor} transition-colors duration-300`}>
                 <p className="text-[10px] font-semibold uppercase tracking-wider">Demand Score</p>
                 <p className="text-sm md:text-base font-bold mt-1.5 truncate">{demandIndex}</p>
-                <span className="text-[9px] opacity-85 block mt-0.5">Fuzzy calculated</span>
+                <span className="text-[9px] opacity-85 block mt-0.5">Smart Projected</span>
               </div>
             </div>
 
@@ -268,18 +268,18 @@ export default function SellerOverview() {
             <div className="mt-5 p-4 rounded-xl bg-amber-950/15 border border-amber-900/20 text-xs text-muted-foreground flex gap-3">
               <Info className="w-4 h-4 text-[#e1dcc9] shrink-0 mt-0.5" />
               <div>
-                <span className="font-semibold text-foreground">AI Market Simulation Insight: </span>
+                <span className="font-semibold text-foreground">Smart Market Simulation Insight: </span>
                 {percentDiff > 10 ? (
                   <span>
-                    Your simulated price of <strong className="text-red-400">${selectedProductPrice}</strong> is currently {Math.round(percentDiff)}% above the competitive market average. Buyers are highly sensitive in this category; volume is projected to decrease, lowering weekly velocity to roughly <strong>{weeklySalesProj} sales/week</strong>.
+                    Your simulated price of <strong className="text-red-400">₹{selectedProductPrice.toLocaleString("en-IN")}</strong> is currently {Math.round(percentDiff)}% above the competitive market average. Buyers are highly sensitive in this category; volume is projected to decrease, lowering weekly velocity to roughly <strong>{weeklySalesProj} sales/week</strong>.
                   </span>
                 ) : percentDiff < -10 ? (
                   <span>
-                    Pricing aggressively low at <strong className="text-cyan-400">${selectedProductPrice}</strong> sets your offering {Math.round(Math.abs(percentDiff))}% below the platform sweetspot. This creates massive traction (estimated <strong>{weeklySalesProj} items/week</strong>), but reduces absolute unit margins by ${Math.round(suggestedPrice - selectedProductPrice)}.
+                    Pricing aggressively low at <strong className="text-cyan-400">₹{selectedProductPrice.toLocaleString("en-IN")}</strong> sets your offering {Math.round(Math.abs(percentDiff))}% below the platform sweetspot. This creates massive traction (estimated <strong>{weeklySalesProj} items/week</strong>), but reduces absolute unit margins by ₹{Math.round(suggestedPrice - selectedProductPrice).toLocaleString("en-IN")}.
                   </span>
                 ) : (
                   <span>
-                    Your simulated price of <strong className="text-[#e1dcc9]">${selectedProductPrice}</strong> is extremely close to the optimal balance point. This pricing maximizes absolute store margin without triggering competitive listing filters, enabling a stable <strong>{weeklySalesProj} transactions/week</strong>.
+                    Your simulated price of <strong className="text-[#e1dcc9]">₹{selectedProductPrice.toLocaleString("en-IN")}</strong> is extremely close to the optimal balance point. This pricing maximizes absolute store margin without triggering competitive listing filters, enabling a stable <strong>{weeklySalesProj} transactions/week</strong>.
                   </span>
                 )}
               </div>
@@ -292,7 +292,7 @@ export default function SellerOverview() {
               <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-widest">Expected Weekly Gross Projections</p>
               <div className="flex items-baseline gap-2 mt-1">
                 <span className="text-2xl font-black text-[#e1dcc9] tracking-tight">
-                  ${projectedWeeklyRevenue.toLocaleString()}
+                  ₹{projectedWeeklyRevenue.toLocaleString("en-IN")}
                 </span>
                 <span className="text-xs text-emerald-400 font-semibold flex items-center">
                   <ArrowUpRight className="w-3.5 h-3.5" />
@@ -304,7 +304,7 @@ export default function SellerOverview() {
               onClick={() => setSelectedProductPrice(suggestedPrice)}
               className="px-4 py-2 text-xs font-semibold rounded-xl bg-[#e1dcc9] text-black hover:bg-[#c9c4b2] active:scale-[0.98] transition-all flex items-center justify-center gap-1.5 shadow-glow-sm"
             >
-              <Sparkles className="w-3.5 h-3.5" /> Adopt AI Sweetspot (${suggestedPrice})
+              <Sparkles className="w-3.5 h-3.5" /> Adopt Smart Sweetspot (₹{suggestedPrice.toLocaleString("en-IN")})
             </button>
           </div>
         </motion.div>
@@ -347,8 +347,8 @@ export default function SellerOverview() {
                   <div className="w-10 h-10 rounded-full bg-[#412d15]/30 flex items-center justify-center mx-auto mb-3">
                     <Sparkles className="w-5 h-5 text-emerald-400/70" />
                   </div>
-                  <p className="text-xs font-semibold text-foreground">All Stock Fully Optimized</p>
-                  <p className="text-[10px] text-muted-foreground mt-0.5">No immediate replenishment needed.</p>
+                  <p className="text-xs font-semibold text-foreground">All Stock Levels Good</p>
+                  <p className="text-[10px] text-muted-foreground mt-0.5">No items need restocking right now.</p>
                 </div>
               )}
             </div>

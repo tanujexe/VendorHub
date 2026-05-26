@@ -134,14 +134,14 @@ export default function AdminOverview() {
         <QueryErrorPlaceholder
           error={analyticsError || vendorsError}
           refetch={handleRefetchAll}
-          message="Failed to load administrator dashboard command data."
+          message="Failed to load admin dashboard data."
         />
       </div>
     );
   }
 
   return (
-    <LoaderWrapper loading={analyticsLoading || vendorsLoading} text="Analyzing platform operations..." subtitle="SYSTEM ADMIN SECURITY CORE" minHeight="400px">
+    <LoaderWrapper loading={analyticsLoading || vendorsLoading} text="Loading admin dashboard..." subtitle="ADMIN PORTAL" minHeight="400px">
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -151,13 +151,13 @@ export default function AdminOverview() {
 
       <div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground flex items-center gap-2">
-          Administrator Command
-          <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#e1dcc9]/10 border border-[#e1dcc9]/20 text-[#e1dcc9] flex items-center gap-1 shadow-glow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-[#e1dcc9]" /> Systems Engaged
+          Admin Overview
+          <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#e1dcc9]/10 border border-[#e1dcc9]/20 text-[#e1dcc9] flex items-center gap-1">
+            <Sparkles className="w-3.5 h-3.5 text-[#e1dcc9]" /> Live
           </span>
         </h1>
         <p className="text-muted-foreground mt-1 text-sm">
-          Platform performance analytics, vendor registrations, active commissions, and refund dispatch controls.
+          Platform stats, pending vendor approvals, commissions earned, and refund management.
         </p>
       </div>
 
@@ -205,8 +205,8 @@ export default function AdminOverview() {
                 <Award className="w-4 h-4 text-[#e1dcc9]" />
               </div>
               <div>
-                <h3 className="font-bold text-foreground text-sm">Vendor Approvals Panel</h3>
-                <p className="text-[10px] text-muted-foreground">Sellers waiting for marketplace verification</p>
+                <h3 className="font-bold text-foreground text-sm">Vendor Approvals</h3>
+                <p className="text-[10px] text-muted-foreground">Sellers waiting for approval to go live</p>
               </div>
             </div>
             <span className="text-xs font-bold text-amber-400 bg-amber-500/10 border border-amber-500/25 px-2.5 py-0.5 rounded-full">
@@ -219,8 +219,8 @@ export default function AdminOverview() {
             {!pendingVendors || pendingVendors.length === 0 ? (
               <div className="p-12 border border-dashed border-[#412d15] rounded-xl text-center">
                 <CheckCircle className="w-8 h-8 text-emerald-400/80 mx-auto mb-2" />
-                <p className="text-xs font-bold text-foreground">All Registration Queues Clear</p>
-                <p className="text-[10px] text-muted-foreground/60">No pending seller accounts are currently waiting review.</p>
+                <p className="text-xs font-bold text-foreground">All Clear</p>
+                <p className="text-[10px] text-muted-foreground/60">No sellers are waiting for review right now.</p>
               </div>
             ) : (
               <div className="overflow-x-auto">
@@ -282,8 +282,8 @@ export default function AdminOverview() {
                 <Award className="w-4 h-4 text-yellow-400" />
               </div>
               <div>
-                <h3 className="font-bold text-foreground text-sm">Platform Elite Sellers</h3>
-                <p className="text-[10px] text-muted-foreground">Top 5 vendors sorted by sales volume</p>
+                <h3 className="font-bold text-foreground text-sm">Top Sellers</h3>
+                <p className="text-[10px] text-muted-foreground">Top 5 sellers ranked by total sales</p>
               </div>
             </div>
 
@@ -300,7 +300,7 @@ export default function AdminOverview() {
                         {vendor.seller?.storeName || "Premium Store"}
                       </p>
                       <p className="text-[9px] text-muted-foreground mt-0.5">
-                        {vendor.orderCount} checkouts handled
+                        {vendor.orderCount} orders fulfilled
                       </p>
                     </div>
                     <span className="text-xs font-bold text-[#e1dcc9]">
@@ -317,7 +317,7 @@ export default function AdminOverview() {
           </div>
 
           <div className="mt-6 pt-4 border-t border-[#412d15]/50 text-center text-[10px] text-muted-foreground">
-            System performance is fully nominal. 🚀
+            Platform is running smoothly. 🚀
           </div>
         </motion.div>
       </div>

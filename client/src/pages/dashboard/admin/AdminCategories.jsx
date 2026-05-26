@@ -115,18 +115,18 @@ export default function AdminCategories() {
 
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight text-foreground flex items-center gap-2">
-            Dynamic Categories CRUD
+          <h1 className="text-3xl font-bold tracking-tight text-foreground">
+            Product Categories
           </h1>
           <p className="text-muted-foreground mt-1 text-sm">
-            Orchestrate custom categories, assign slugs, and scale system taxonomies.
+            Manage your product categories and URL slugs.
           </p>
         </div>
         <button
           onClick={handleOpenAddModal}
           className="px-4 py-2.5 rounded-xl bg-[#e1dcc9] text-black hover:bg-[#c9c4b2] active:scale-[0.98] transition-all font-semibold flex items-center gap-1.5 self-start sm:self-auto shadow-glow-sm"
         >
-          <Plus className="w-4 h-4" /> Add Category Model
+          <Plus className="w-4 h-4" /> Add Category
         </button>
       </div>
 
@@ -136,9 +136,9 @@ export default function AdminCategories() {
           <table className="w-full text-left border-collapse text-xs">
             <thead>
               <tr className="border-b border-[#412d15]/30 bg-black/40 text-muted-foreground text-[10px] uppercase font-bold tracking-widest">
-                <th className="py-4 px-6">Category ID</th>
-                <th className="py-4 px-6">Name Label</th>
-                <th className="py-4 px-6">System Slug</th>
+                <th className="py-4 px-6">ID</th>
+                <th className="py-4 px-6">Name</th>
+                <th className="py-4 px-6">Slug</th>
                 <th className="py-4 px-6 text-right">Actions</th>
               </tr>
             </thead>
@@ -227,7 +227,7 @@ export default function AdminCategories() {
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-[#e1dcc9]" />
                   <h3 className="text-lg font-bold text-foreground">
-                    {editingCategory ? "Update Category Taxonomies" : "Register Category Model"}
+                    {editingCategory ? "Edit Category" : "Add Category"}
                   </h3>
                 </div>
                 <button
@@ -253,7 +253,7 @@ export default function AdminCategories() {
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-[10px] font-bold tracking-wider text-muted-foreground uppercase">System Slug (Generated)</label>
+                  <label className="text-[10px] font-bold tracking-wider text-muted-foreground uppercase">Category Slug (Auto-generated)</label>
                   <input
                     type="text"
                     name="slug"
@@ -278,7 +278,7 @@ export default function AdminCategories() {
                     className="px-4 py-2 rounded-xl bg-[#e1dcc9] text-black hover:bg-[#c9c4b2] text-xs font-semibold flex items-center gap-1 shadow-glow-sm"
                   >
                     <Sparkles className="w-3.5 h-3.5" />
-                    {editingCategory ? "Adopt taxonomy" : "Instantiate Category"}
+                    {editingCategory ? "Update Category" : "Create Category"}
                   </button>
                 </div>
               </form>

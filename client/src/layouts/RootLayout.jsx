@@ -11,7 +11,7 @@ const RootLayout = () => {
       <Navbar />
 
 
-      <div className="h-16 lg:h-[108px]" />
+      <div className="h-20 lg:h-[108px]" />
 
       <motion.main
         key={location.pathname}

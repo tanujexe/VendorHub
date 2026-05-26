@@ -47,11 +47,11 @@ export default function AdminUsers() {
     <div className="space-y-6">
 
       <div>
-        <h1 className="text-3xl font-bold tracking-tight text-foreground flex items-center gap-2">
-          User Account Control
+        <h1 className="text-3xl font-bold tracking-tight text-foreground">
+          Manage Users
         </h1>
         <p className="text-muted-foreground mt-1 text-sm">
-          Activate/Deactivate system accounts, audit logins, and adjust buyer/seller access profiles.
+          View and manage user accounts, change statuses, and control access levels.
         </p>
       </div>
 
@@ -73,17 +73,17 @@ export default function AdminUsers() {
           <table className="w-full text-left border-collapse text-xs">
             <thead>
               <tr className="border-b border-[#412d15]/30 bg-black/40 text-muted-foreground text-[10px] uppercase font-bold tracking-widest">
-                <th className="py-4 px-6">User Account</th>
-                <th className="py-4 px-6">Role Profile</th>
+                <th className="py-4 px-6">User</th>
+                <th className="py-4 px-6">Role</th>
                 <th className="py-4 px-6">Status</th>
-                <th className="py-4 px-6 text-right">Access Controls</th>
+                <th className="py-4 px-6 text-right">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-[#412d15]/10 bg-[#1f150c]/5">
               {isLoading ? (
                 <tr>
                   <td colSpan="4" className="text-center py-12 text-xs text-muted-foreground">
-                    Querying cryptographic user index...
+                    Loading users...
                   </td>
                 </tr>
               ) : error ? (
@@ -136,7 +136,7 @@ export default function AdminUsers() {
                             : "bg-red-500/10 text-red-400 border-red-500/25"
                         }`}
                       >
-                        {u.isActive ? "Nominal / Active" : "Suspended"}
+                        {u.isActive ? "Active" : "Suspended"}
                       </span>
                     </td>
                     <td className="py-4 px-6 text-right">

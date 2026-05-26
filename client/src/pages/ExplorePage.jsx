@@ -99,7 +99,7 @@ const CATEGORIES = [
     image: "/category-photos/backpacks.jpg",
   },
   {
-    name: "AI Gadgets",
+    name: "Smart Gadgets",
     icon: Sparkles,
     image: "/category-photos/ai-gadgets.jpg",
   },
@@ -141,7 +141,7 @@ const CATEGORY_ALIASES = {
   "Gaming Accessories": ["gaming accessories", "keyboard", "mouse", "controller"],
   "Fashion Accessories": ["fashion accessories", "accessories", "briefcase", "sling"],
   Backpacks: ["backpack", "backpacks", "bag", "bags", "pack"],
-  "AI Gadgets": ["ai", "gadget", "gadgets", "smart"],
+  "Smart Gadgets": ["smart", "gadget", "gadgets", "intelligent"],
   Home: ["home", "furniture", "desk", "chair", "workspace", "acoustic", "lighting"],
   Electronics: ["electronics", "smartphone", "phone", "laptop", "gaming laptop", "ultrabook", "gpu", "processor"],
   Wearables: ["wearables", "wearable", "ring", "watch", "glasses", "bio-ring"],

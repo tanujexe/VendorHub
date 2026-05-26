@@ -68,7 +68,7 @@ function Login() {
           <span className="inline-flex rounded-full border border-[#e1dcc9]/12 bg-[#e1dcc9]/5 px-3 py-1 text-[9px] uppercase tracking-[0.25em] text-[#e1dcc9]/85 mb-2.5 sm:mb-3 font-semibold">
             Member Portal
           </span>
-          <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-white font-oswald leading-none">
+          <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-[0.15em] text-white font-oswald leading-none">
             Welcome Back
           </h2>
           <p className="text-xs text-[#e1dcc9]/50 mt-1.5 sm:mt-2 font-light">

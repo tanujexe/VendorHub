@@ -50,11 +50,11 @@ export default function AdminProducts() {
 
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight text-foreground flex items-center gap-2">
-            Catalog Supervision
+          <h1 className="text-3xl font-bold tracking-tight text-foreground">
+            All Products
           </h1>
           <p className="text-muted-foreground mt-1 text-sm">
-            Monitor and audit all active items listed across the marketplace.
+            View and manage all products listed on the platform.
           </p>
         </div>
       </div>
@@ -77,11 +77,11 @@ export default function AdminProducts() {
           <table className="w-full text-left border-collapse text-xs">
             <thead>
               <tr className="border-b border-[#412d15]/30 bg-black/40 text-muted-foreground text-[10px] uppercase font-bold tracking-widest">
-                <th className="py-4 px-6">Product Details</th>
+                <th className="py-4 px-6">Product</th>
                 <th className="py-4 px-6">Store / Vendor</th>
                 <th className="py-4 px-6">Category</th>
                 <th className="py-4 px-6">Price</th>
-                <th className="py-4 px-6">Stock Level</th>
+                <th className="py-4 px-6">Stock</th>
                 <th className="py-4 px-6 text-right">Actions</th>
               </tr>
             </thead>
@@ -89,7 +89,7 @@ export default function AdminProducts() {
               {isLoading ? (
                 <tr>
                   <td colSpan="6" className="text-center py-12 text-xs text-muted-foreground">
-                    Fetching platform products catalog...
+                    Fetching products...
                   </td>
                 </tr>
               ) : error ? (
@@ -152,7 +152,7 @@ export default function AdminProducts() {
                         <button
                           onClick={() => handleDelete(product._id)}
                           className="p-2 rounded-lg bg-red-950/15 border border-red-500/10 hover:bg-red-500/20 hover:text-red-400 text-muted-foreground transition-all duration-200"
-                          title="Audit Delete Product"
+                          title="Delete Product"
                         >
                           <Trash2 className="w-3.5 h-3.5" />
                         </button>

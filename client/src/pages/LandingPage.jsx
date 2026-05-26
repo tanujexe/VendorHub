@@ -177,37 +177,37 @@ const SkeletonCard = () => (
 const HERO_SLIDES = [
   {
     number: "01",
-    subtitle: "Limited Drops. Maximum Impact",
-    heading: "LIMITED DROPS",
-    description: "Exclusive weekly releases engineered for high-performance streetwear culture. Once they're gone, they're gone.",
+    subtitle: "Smart Marketplace Core",
+    heading: "PREMIUM DROPS ENGINE",
+    description: "The next-generation marketplace connecting elite creators and streetwear brands with buyers, driven by predictive matching.",
     image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=1600&q=80",
   },
   {
     number: "02",
-    subtitle: "Built for the Streets",
-    heading: "STREET CULTURE",
-    description: "Designed for the bold, the active, and the rebellious. Crafted with durable fabrics and relaxed oversized silhouettes.",
+    subtitle: "Real-time Vendor Command Center",
+    heading: "CATALOG INTELLIGENCE",
+    description: "Empowering premium brands with elastic pricing simulators, dynamic inventory tracking, and automated stock alert warnings.",
     image: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=1600&q=80",
   },
   {
     number: "03",
-    subtitle: "Art Meets Attitude",
-    heading: "ART & ATTITUDE",
-    description: "Where contemporary fashion merges with urban expressionism and premium streetwear craftsmanship.",
+    subtitle: "Hyper-Personalized Matchmaking",
+    heading: "SMART DISCOVERY CORE",
+    description: "Orchestrating deep learning search, real-time location trend mapping, and high-conversion interactive buyer gateways.",
     image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1600&q=80",
   },
   {
     number: "04",
-    subtitle: "Future-Ready Fashion",
-    heading: "FUTURE TECHWEAR",
-    description: "Next-gen apparel integrating modular layers, technical pockets, and premium water-resistant textiles.",
+    subtitle: "Frictionless Checkout Systems",
+    heading: "1-CLICK SECURE FLOW",
+    description: "Instant order placement with integrated Razorpay payment nodes, automated dispatch logs, and carrier milestone trackers.",
     image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1600&q=80",
   },
   {
     number: "05",
-    subtitle: "Community-Driven Culture",
-    heading: "COMMUNITY-DRIVEN CULTURE",
-    description: "More than just a brand, we're a movement—connecting creatives, skaters, and trendsetters who define the streets.",
+    subtitle: "Compliance & Security Ledger",
+    heading: "SECURED MERCHANT NODES",
+    description: "Administrative verification portals and robust compliance gateways protecting marketplace transactions and buyer trust.",
     image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=1600&q=80",
   }
 ];
@@ -402,7 +402,7 @@ const LandingPage = () => {
                   onClick={() => navigate("/explore")}
                   className="flex items-center gap-3.5 bg-white text-black pl-6 pr-2 py-2 rounded-full font-bold hover:bg-neutral-100 transition-all duration-300 group shadow-lg"
                 >
-                  <span className="text-xs uppercase tracking-widest font-oswald font-semibold">Shop now</span>
+                  <span className="text-xs uppercase tracking-wider font-semibold">Shop now</span>
                   <span className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center group-hover:translate-x-1 transition-transform">
                     <ArrowRight className="w-4 h-4" />
                   </span>
@@ -500,7 +500,7 @@ const LandingPage = () => {
                       <cat.icon className="h-5 w-5" />
                     </div>
                     <div className="max-w-[13rem]">
-                      <h3 className="font-anton text-2xl font-black uppercase leading-none tracking-[0.14em] text-[#e1dcc9] drop-shadow-[0_3px_12px_rgba(0,0,0,0.9)]">
+                      <h3 className="font-anton text-2xl font-black uppercase leading-none tracking-[0.16em] text-[#e1dcc9] drop-shadow-[0_3px_12px_rgba(0,0,0,0.9)]">
                         {cat.name}
                       </h3>
                       <p className="mt-2 text-xs font-bold text-white/85">
@@ -531,7 +531,7 @@ const LandingPage = () => {
             <div className="max-w-2xl">
               <motion.h2
                 variants={fadeUp}
-                className="text-4xl md:text-5xl font-black tracking-wider text-foreground font-anton uppercase"
+                className="text-4xl md:text-5xl font-black tracking-[0.14em] text-foreground font-anton uppercase"
               >
                 NEW <span className="text-primary">DROPS</span>
               </motion.h2>
@@ -572,7 +572,7 @@ const LandingPage = () => {
 
           <div className="mt-12 text-center sm:hidden">
             <Button variant="outline" asChild className="rounded-full px-6">
-              <Link to="/explore" className="gap-2 text-xs uppercase tracking-widest font-oswald">
+              <Link to="/explore" className="gap-2 text-xs uppercase tracking-wider font-semibold">
                 View All Products
                 <ArrowRight className="w-4 h-4" />
               </Link>
@@ -590,10 +590,10 @@ const LandingPage = () => {
           <div className="text-center max-w-xl mx-auto">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#412d15]/50 border border-[#e1dcc9]/10 text-xs font-semibold uppercase tracking-wider mb-4">
               <Sparkles className="w-3.5 h-3.5 text-yellow-300 animate-pulse" />
-              <span>AI Smart Recommendations</span>
+              <span>Smart Recommendations</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground font-anton uppercase">
-              AI-POWERED <span className="text-primary">DISCOVERY HUB</span>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-[0.14em] text-foreground font-anton uppercase">
+              PREMIUM <span className="text-primary">DISCOVERY HUB</span>
             </h2>
             <p className="mt-3 text-muted-foreground text-sm max-w-md mx-auto">
               Explore hyper-personalised collections generated dynamically based on your browsing habits, category preferences, and location trends.
@@ -605,13 +605,13 @@ const LandingPage = () => {
         <div className="space-y-12">
 
           <div>
-            <p className="text-[10px] font-bold text-[#e1dcc9]/70 tracking-widest uppercase mb-3 px-6 md:px-12 flex items-center gap-1.5 font-oswald">
+            <p className="text-xs font-semibold text-[#e1dcc9]/80 tracking-wider uppercase mb-3 px-6 md:px-12 flex items-center gap-1.5">
               <Sparkles className="w-3 h-3 text-yellow-300 animate-pulse" />
               <span>Recommended For You</span>
             </p>
             <div className="marquee-group w-full overflow-hidden relative select-none">
-              <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-              <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+              <div className="absolute inset-y-0 left-0 w-12 sm:w-24 md:w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+              <div className="absolute inset-y-0 right-0 w-12 sm:w-24 md:w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
 
               <div className="flex w-max gap-6 py-2 animate-marquee">
                 {tileArray(recs.recommendedForYou.length > 0 ? recs.recommendedForYou : products).map((item, idx) => (
@@ -638,13 +638,13 @@ const LandingPage = () => {
 
 
           <div>
-            <p className="text-[10px] font-bold text-[#e1dcc9]/70 tracking-widest uppercase mb-3 px-6 md:px-12 flex items-center gap-1.5 font-oswald">
+            <p className="text-xs font-semibold text-[#e1dcc9]/80 tracking-wider uppercase mb-3 px-6 md:px-12 flex items-center gap-1.5">
               <ShoppingBag className="w-3 h-3 text-primary animate-pulse" />
               <span>Frequently Bought Together</span>
             </p>
             <div className="marquee-group w-full overflow-hidden relative select-none">
-              <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-              <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+              <div className="absolute inset-y-0 left-0 w-12 sm:w-24 md:w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+              <div className="absolute inset-y-0 right-0 w-12 sm:w-24 md:w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
 
               <div className="flex w-max gap-6 py-2 animate-marquee" style={{ animationDirection: "reverse" }}>
                 {tileArray(recs.frequentlyBoughtTogether.length > 0 ? recs.frequentlyBoughtTogether : products).map((item, idx) => (
@@ -671,13 +671,13 @@ const LandingPage = () => {
 
 
           <div>
-            <p className="text-[10px] font-bold text-[#e1dcc9]/70 tracking-widest uppercase mb-3 px-6 md:px-12 flex items-center gap-1.5 font-oswald">
+            <p className="text-xs font-semibold text-[#e1dcc9]/80 tracking-wider uppercase mb-3 px-6 md:px-12 flex items-center gap-1.5">
               <Heart className="w-3 h-3 text-red-400" />
               <span>Similar Products</span>
             </p>
             <div className="marquee-group w-full overflow-hidden relative select-none">
-              <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-              <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+              <div className="absolute inset-y-0 left-0 w-12 sm:w-24 md:w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+              <div className="absolute inset-y-0 right-0 w-12 sm:w-24 md:w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
 
               <div className="flex w-max gap-6 py-2 animate-marquee">
                 {tileArray(recs.similarProducts.length > 0 ? recs.similarProducts : products).map((item, idx) => (
@@ -704,13 +704,13 @@ const LandingPage = () => {
 
 
           <div>
-            <p className="text-[10px] font-bold text-[#e1dcc9]/70 tracking-widest uppercase mb-3 px-6 md:px-12 flex items-center gap-1.5 font-oswald">
+            <p className="text-xs font-semibold text-[#e1dcc9]/80 tracking-wider uppercase mb-3 px-6 md:px-12 flex items-center gap-1.5">
               <MapPin className="w-3 h-3 text-primary animate-pulse" />
               <span>Trending Near You</span>
             </p>
             <div className="marquee-group w-full overflow-hidden relative select-none">
-              <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-              <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+              <div className="absolute inset-y-0 left-0 w-12 sm:w-24 md:w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+              <div className="absolute inset-y-0 right-0 w-12 sm:w-24 md:w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
 
               <div className="flex w-max gap-6 py-2 animate-marquee" style={{ animationDirection: "reverse" }}>
                 {tileArray(recs.trendingNearYou.length > 0 ? recs.trendingNearYou : products).map((item, idx) => (
@@ -737,13 +737,13 @@ const LandingPage = () => {
 
 
           <div>
-            <p className="text-[10px] font-bold text-[#e1dcc9]/70 tracking-widest uppercase mb-3 px-6 md:px-12 flex items-center gap-1.5 font-oswald">
+            <p className="text-xs font-semibold text-[#e1dcc9]/80 tracking-wider uppercase mb-3 px-6 md:px-12 flex items-center gap-1.5">
               <Zap className="w-3 h-3 text-yellow-300" />
               <span>Inspired By Your Browsing</span>
             </p>
             <div className="marquee-group w-full overflow-hidden relative select-none">
-              <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-              <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+              <div className="absolute inset-y-0 left-0 w-12 sm:w-24 md:w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+              <div className="absolute inset-y-0 right-0 w-12 sm:w-24 md:w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
 
               <div className="flex w-max gap-6 py-2 animate-marquee">
                 {tileArray(recs.inspiredByBrowsing.length > 0 ? recs.inspiredByBrowsing : products).map((item, idx) => (

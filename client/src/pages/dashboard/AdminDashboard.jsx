@@ -40,7 +40,7 @@ export default function AdminDashboard({ view = "overview" }) {
     <div className="container mx-auto px-4 md:px-6 py-6 max-w-7xl">
       <Suspense
         fallback={
-          <DelayedSuspenseFallback text="Loading secure admin console..." fullScreen={false} />
+          <DelayedSuspenseFallback text="Loading..." fullScreen={false} />
         }
       >
         <motion.div

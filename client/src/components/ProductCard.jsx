@@ -218,11 +218,11 @@ const ProductCard = memo(({ product, index = 0 }) => {
               />
             </button>
 
-            <div className="absolute inset-x-0 bottom-0 z-10 p-3 md:hidden">
+            <div className="absolute inset-x-0 bottom-0 z-10 p-4 md:hidden">
               <p className="mb-1 text-[9px] font-black uppercase tracking-[0.22em] text-[#e1dcc9]/58">
                 {item.category}
               </p>
-              <h3 className="line-clamp-2 text-sm font-black uppercase leading-tight tracking-[0.06em] text-[#e1dcc9]">
+              <h3 className="line-clamp-2 text-sm font-black uppercase leading-tight tracking-[0.08em] text-[#e1dcc9]">
                 {item.title}
               </h3>
               <div className="mt-2 flex items-end justify-between gap-2">

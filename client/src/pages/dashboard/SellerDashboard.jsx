@@ -61,13 +61,13 @@ export default function SellerDashboard({ view = "overview" }) {
               <div className="space-y-3.5 max-w-2xl">
                 <span className="inline-flex items-center gap-2 rounded-full border border-[#e1dcc9]/12 bg-[#412d15]/25 px-3 py-1 text-[9px] uppercase tracking-[0.25em] text-[#e1dcc9]/85 font-semibold">
                   <Activity className="w-3 h-3 text-[#e1dcc9] animate-pulse" />
-                  Compliance Core Review
+                  Pending Approval
                 </span>
                 <h1 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white font-oswald leading-none">
-                  Boutique Activation <span className="gradient-text">Pending</span>
+                  Seller Activation <span className="gradient-text">Pending</span>
                 </h1>
                 <p className="text-sm leading-relaxed text-[#e1dcc9]/60 font-light">
-                  Your merchant profile is currently undergoing a secure ledger verification audit. Standard compliance evaluations are processed by administrative agents within 12–24 hours.
+                  Your seller profile is being reviewed by our admin team. This usually takes 12–24 hours.
                 </p>
               </div>
 
@@ -76,8 +76,8 @@ export default function SellerDashboard({ view = "overview" }) {
                   <Clock className="w-6 h-6 text-[#e1dcc9] animate-[spin_10s_linear_infinite]" />
                 </div>
                 <div>
-                  <p className="text-[10px] uppercase tracking-wider text-[#e1dcc9]/50">Audit Duration</p>
-                  <p className="text-sm font-bold text-white font-oswald tracking-[0.05em]">12–24 HOURS SLA</p>
+                  <p className="text-[10px] uppercase tracking-wider text-[#e1dcc9]/50">Review Time</p>
+                  <p className="text-sm font-bold text-white font-oswald tracking-[0.05em]">12–24 HOURS</p>
                 </div>
               </div>
             </div>
@@ -86,7 +86,7 @@ export default function SellerDashboard({ view = "overview" }) {
 
           <div className="space-y-6">
             <h2 className="text-xs uppercase tracking-[0.3em] font-black text-[#e1dcc9]/70 font-oswald">
-              Onboarding Milestones
+              Activation Steps
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
 
@@ -95,10 +95,10 @@ export default function SellerDashboard({ view = "overview" }) {
                   <CheckCircle2 className="w-4 h-4" />
                 </div>
                 <div className="space-y-3 mt-4">
-                  <span className="text-[9px] uppercase tracking-[0.2em] text-emerald-400/80 font-bold font-mono">Stage 01 / Completed</span>
-                  <h3 className="text-base font-bold uppercase tracking-wide text-white font-oswald">Profile Registered</h3>
+                  <span className="text-[9px] uppercase tracking-[0.2em] text-emerald-400/80 font-bold font-mono">Step 01 / Done</span>
+                  <h3 className="text-base font-bold uppercase tracking-wide text-white font-oswald">Profile Created</h3>
                   <p className="text-xs text-[#e1dcc9]/50 leading-relaxed font-light">
-                    Storefront records, billing locations, and credentials have been securely registered to the core database node.
+                    Your store details and account credentials have been saved to the platform.
                   </p>
                 </div>
               </div>
@@ -109,10 +109,10 @@ export default function SellerDashboard({ view = "overview" }) {
                   <Clock className="w-4 h-4" />
                 </div>
                 <div className="space-y-3 mt-4">
-                  <span className="text-[9px] uppercase tracking-[0.2em] text-[#e1dcc9]/80 font-bold font-mono animate-pulse">Stage 02 / Auditing</span>
-                  <h3 className="text-base font-bold uppercase tracking-wide text-white font-oswald">Compliance Screening</h3>
+                  <span className="text-[9px] uppercase tracking-[0.2em] text-[#e1dcc9]/80 font-bold font-mono animate-pulse">Step 02 / In Review</span>
+                  <h3 className="text-base font-bold uppercase tracking-wide text-white font-oswald">Admin Review</h3>
                   <p className="text-xs text-[#e1dcc9]/50 leading-relaxed font-light">
-                    Administrative screening of brand listings, license legitimacy, and anti-fraud protocols is actively in progress.
+                    Our admin team is reviewing your profile and verifying your store details.
                   </p>
                 </div>
               </div>
@@ -123,10 +123,10 @@ export default function SellerDashboard({ view = "overview" }) {
                   <Lock className="w-4 h-4" />
                 </div>
                 <div className="space-y-3 mt-4">
-                  <span className="text-[9px] uppercase tracking-[0.2em] text-[#e1dcc9]/30 font-bold font-mono">Stage 03 / Locked</span>
-                  <h3 className="text-base font-bold uppercase tracking-wide text-[#e1dcc9]/40 font-oswald">Boutique Live</h3>
+                  <span className="text-[9px] uppercase tracking-[0.2em] text-[#e1dcc9]/30 font-bold font-mono">Step 03 / Locked</span>
+                  <h3 className="text-base font-bold uppercase tracking-wide text-[#e1dcc9]/40 font-oswald">Store Goes Live</h3>
                   <p className="text-xs text-[#e1dcc9]/30 leading-relaxed font-light">
-                    Upon clearance, your dynamic storefront catalog, inventory dispatch ledger, and sales analytics panel are instantly activated.
+                    Once approved, your store dashboard, products, orders, and analytics will all be unlocked.
                   </p>
                 </div>
               </div>
@@ -137,8 +137,8 @@ export default function SellerDashboard({ view = "overview" }) {
 
             <div className="lg:col-span-5 space-y-6">
               <h2 className="text-xs uppercase tracking-[0.3em] font-black text-[#e1dcc9]/70 font-oswald">
-                Boutique Credentials
-              </h2>
+              Your Store Details
+            </h2>
               <div className="relative overflow-hidden rounded-[2rem] border border-[#e1dcc9]/10 bg-gradient-to-br from-[#1b120a]/60 via-black to-[#130d07]/50 p-7 shadow-2xl backdrop-blur-2xl group">
 
                 <div
@@ -148,14 +148,11 @@ export default function SellerDashboard({ view = "overview" }) {
 
                 <div className="flex justify-between items-start mb-10">
                   <div className="space-y-1">
-                    <p className="text-[8px] uppercase tracking-[0.25em] text-[#e1dcc9]/40 font-mono">Boutique Core Identity</p>
+                    <p className="text-[8px] uppercase tracking-[0.25em] text-[#e1dcc9]/40 font-mono">Store Name</p>
                     <h3 className="text-lg font-black uppercase text-white font-oswald tracking-[0.05em] truncate max-w-[200px]">
-                      {user?.storeName || "Unnamed Boutique"}
+                      {user?.storeName || "Unnamed Account"}
                     </h3>
                   </div>
-                  <span className="inline-flex rounded border border-[#e1dcc9]/20 bg-black px-2 py-0.5 text-[8px] font-mono text-[#e1dcc9] shadow-inner">
-                    VH-SECURE
-                  </span>
                 </div>
 
                 <div className="space-y-4">
@@ -163,9 +160,9 @@ export default function SellerDashboard({ view = "overview" }) {
                   <div className="flex items-center gap-3">
                     <MapPin className="w-4 h-4 text-[#e1dcc9]/45 shrink-0" />
                     <div>
-                      <p className="text-[8px] uppercase tracking-wider text-[#e1dcc9]/35">Registry Region</p>
+                      <p className="text-[8px] uppercase tracking-wider text-[#e1dcc9]/35">Location</p>
                       <p className="text-xs font-medium text-white truncate max-w-[250px]">
-                        {user?.vendorLocation || "Global Network / Remote"}
+                        {user?.vendorLocation || "Not specified"}
                       </p>
                     </div>
                   </div>
@@ -174,7 +171,7 @@ export default function SellerDashboard({ view = "overview" }) {
                   <div className="flex items-center gap-3">
                     <Mail className="w-4 h-4 text-[#e1dcc9]/45 shrink-0" />
                     <div>
-                      <p className="text-[8px] uppercase tracking-wider text-[#e1dcc9]/35">Merchant Registry Email</p>
+                      <p className="text-[8px] uppercase tracking-wider text-[#e1dcc9]/35">Email</p>
                       <p className="text-xs font-medium text-white truncate max-w-[250px]">
                         {user?.email || "N/A"}
                       </p>
@@ -185,7 +182,7 @@ export default function SellerDashboard({ view = "overview" }) {
                   <div className="flex items-center gap-3">
                     <Calendar className="w-4 h-4 text-[#e1dcc9]/45 shrink-0" />
                     <div>
-                      <p className="text-[8px] uppercase tracking-wider text-[#e1dcc9]/35">Enrollment Verified</p>
+                      <p className="text-[8px] uppercase tracking-wider text-[#e1dcc9]/35">Member Since</p>
                       <p className="text-xs font-medium text-white">
                         {formattedDate}
                       </p>
@@ -195,7 +192,7 @@ export default function SellerDashboard({ view = "overview" }) {
 
                 <div className="border-t border-[#412d15]/50 mt-8 pt-6 flex justify-between items-center text-[9px] font-mono">
                   <div className="text-[#e1dcc9]/30">
-                    <p className="uppercase tracking-wider">Registry Signature Hash</p>
+                    <p className="uppercase tracking-wider">Account ID</p>
                     <p className="text-[#e1dcc9]/50 tracking-tight mt-0.5">{registryHash}</p>
                   </div>
                   <div className="shrink-0 flex items-center justify-center w-7 h-7 rounded bg-[#412d15]/20 border border-[#e1dcc9]/10">
@@ -208,8 +205,8 @@ export default function SellerDashboard({ view = "overview" }) {
 
             <div className="lg:col-span-7 space-y-6">
               <h2 className="text-xs uppercase tracking-[0.3em] font-black text-[#e1dcc9]/70 font-oswald">
-                Security Onboarding FAQ
-              </h2>
+              Common Questions
+            </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="rounded-2xl border border-[#412d15]/60 bg-black/35 p-5 space-y-2">
                   <div className="flex items-center gap-2 text-white font-bold text-xs uppercase tracking-wider font-oswald">
@@ -217,7 +214,7 @@ export default function SellerDashboard({ view = "overview" }) {
                     Why are reviews required?
                   </div>
                   <p className="text-[11px] text-[#e1dcc9]/50 leading-relaxed font-light">
-                    To maintain an elite boutique catalog and secure transactional gateway, admins verify seller storefronts, business licenses, and list integrity before provisioning ledger capabilities.
+                    We review every seller before they go live to ensure quality products and a safe shopping experience for buyers.
                   </p>
                 </div>
 
@@ -227,7 +224,7 @@ export default function SellerDashboard({ view = "overview" }) {
                     Listing Guidelines
                   </div>
                   <p className="text-[11px] text-[#e1dcc9]/50 leading-relaxed font-light">
-                    Always present authenticated luxury items. Avoid generic brand copies or inaccurate descriptions. Listings require high-resolution studio photos matching modern visual styles.
+                    List genuine, well-described products with clear, high-quality photos. Avoid misleading details or low-quality images.
                   </p>
                 </div>
 
@@ -237,7 +234,7 @@ export default function SellerDashboard({ view = "overview" }) {
                     SLA Verification Windows
                   </div>
                   <p className="text-[11px] text-[#e1dcc9]/50 leading-relaxed font-light">
-                    Verification requests are reviewed on a rolling queue basis. Audits are typically completed within 12–24 hours, after which catalog activation email confirmations are dispatched.
+                    Most reviews are done within 12–24 hours. You'll get an email once your account is approved.
                   </p>
                 </div>
 
@@ -247,8 +244,8 @@ export default function SellerDashboard({ view = "overview" }) {
                     Gateway Support
                   </div>
                   <p className="text-[11px] text-[#e1dcc9]/50 leading-relaxed font-light">
-                    Have questions about your verification? Get directly in touch with our security compliance representatives by shooting an email to{" "}
-                    <a href="mailto:compliance@vendorhub.com" className="text-white hover:underline font-semibold">compliance@vendorhub.com</a>.
+                    Have questions? Email us at{" "}
+                    <a href="mailto:support@vendorhub.com" className="text-white hover:underline font-semibold">support@vendorhub.com</a>.
                   </p>
                 </div>
               </div>
@@ -280,7 +277,7 @@ export default function SellerDashboard({ view = "overview" }) {
     <div className="container mx-auto px-4 md:px-6 py-6 max-w-7xl">
       <Suspense
         fallback={
-          <DelayedSuspenseFallback text="Synchronizing merchant layers..." fullScreen={false} />
+          <DelayedSuspenseFallback text="Loading..." fullScreen={false} />
         }
       >
         <motion.div

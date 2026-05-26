@@ -55,7 +55,7 @@ const trendingSearches = [
   "android phone",
   "running shoes",
   "smartwatch",
-  "AI gadgets",
+  "smart gadgets",
 ];
 
 const categorySuggestions = [
@@ -72,7 +72,7 @@ const predictiveMap = {
   mobile: ["smartphones", "Android phones", "iPhones", "wireless chargers"],
   laptop: ["gaming laptops", "ultrabooks", "notebooks", "laptop accessories"],
   shoes: ["sneakers", "running shoes", "fashion shoes", "streetwear footwear"],
-  watch: ["smartwatches", "fitness trackers", "AI wearables"],
+  watch: ["smartwatches", "fitness trackers", "smart wearables"],
   audio: ["headphones", "earbuds", "studio speakers"],
 };
 
@@ -165,7 +165,7 @@ const SearchSheet = ({ open, onClose }) => {
             <div className="mb-5 flex items-center justify-between">
               <div>
                 <p className="text-[10px] font-black uppercase tracking-[0.28em] text-[#e1dcc9]/50">
-                  AI Smart Search
+                  Smart Search
                 </p>
                 <h2 className="mt-1 text-xl font-black uppercase tracking-[0.08em] text-[#e1dcc9]">
                   Find The Drop
@@ -500,10 +500,10 @@ const Navbar = () => {
                     <Link
                       key={label}
                       to={to}
-                      className={`flex items-center gap-2 rounded-full px-4 py-2 text-[10px] font-black uppercase tracking-[0.2em] transition ${
+                      className={`flex items-center gap-2 rounded-full px-4 py-2 text-[11px] font-black uppercase tracking-[0.22em] transition-all duration-200 ${
                         active
-                          ? "bg-[#e1dcc9] text-black"
-                          : "text-[#e1dcc9]/65 hover:bg-[#412d15]/35 hover:text-[#e1dcc9]"
+                          ? "bg-[#e1dcc9] text-black shadow-sm"
+                          : "text-[#e1dcc9]/70 hover:bg-[#412d15]/35 hover:text-[#e1dcc9]"
                       }`}
                     >
                       <Icon className="h-3.5 w-3.5" />
@@ -512,8 +512,8 @@ const Navbar = () => {
                   );
                 })}
               </nav>
-              <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#e1dcc9]/45">
-                Curated AI commerce for premium vendors
+              <p className="text-xs font-medium tracking-wide text-[#e1dcc9]/50">
+                Curated Multi-Vendor Marketplace
               </p>
             </div>
           </div>

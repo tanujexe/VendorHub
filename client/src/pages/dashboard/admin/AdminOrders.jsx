@@ -65,11 +65,11 @@ export default function AdminOrders() {
     <div className="space-y-6">
 
       <div>
-        <h1 className="text-3xl font-bold tracking-tight text-foreground flex items-center gap-2">
-          Platform Transactions
+        <h1 className="text-3xl font-bold tracking-tight text-foreground">
+          All Orders
         </h1>
         <p className="text-muted-foreground mt-1 text-sm">
-          Audit and manage all platform checkouts, track payment gateways, and authorize customer refund dispatches.
+          View and manage all customer orders, track payments, and process refunds.
         </p>
       </div>
 
@@ -91,19 +91,19 @@ export default function AdminOrders() {
           <table className="w-full text-left border-collapse text-xs">
             <thead>
               <tr className="border-b border-[#412d15]/30 bg-black/40 text-muted-foreground text-[10px] uppercase font-bold tracking-widest">
-                <th className="py-4 px-6">Transaction / Order ID</th>
-                <th className="py-4 px-6">Buyer Profile</th>
-                <th className="py-4 px-6">Gross Total</th>
+                <th className="py-4 px-6">Order ID</th>
+                <th className="py-4 px-6">Customer</th>
+                <th className="py-4 px-6">Total</th>
                 <th className="py-4 px-6">Order Status</th>
                 <th className="py-4 px-6">Payment</th>
-                <th className="py-4 px-6 text-right">Auditing Controls</th>
+                <th className="py-4 px-6 text-right">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-[#412d15]/10 bg-[#1f150c]/5">
               {isLoading ? (
                 <tr>
                   <td colSpan="6" className="text-center py-12 text-xs text-muted-foreground">
-                    Fetching platform transactions ledgers...
+                    Fetching orders...
                   </td>
                 </tr>
               ) : error ? (
@@ -176,10 +176,10 @@ export default function AdminOrders() {
                             onClick={() => handleRefund(order._id)}
                             className="px-3 py-1.5 rounded-xl bg-[#412d15]/30 border border-[#e1dcc9]/5 hover:bg-purple-500/10 hover:text-purple-400 text-[10px] font-semibold text-muted-foreground transition-all ml-auto"
                           >
-                            Trigger Refund
+                            Issue Refund
                           </button>
                         ) : (
-                          <span className="text-[10px] text-muted-foreground/60 italic font-medium">Audited</span>
+                          <span className="text-[10px] text-muted-foreground/60 italic font-medium">Done</span>
                         )}
                       </td>
                     </tr>

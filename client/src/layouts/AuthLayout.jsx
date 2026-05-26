@@ -197,7 +197,7 @@ const AuthLayout = () => {
 
           <span className="inline-flex items-center gap-2 rounded-full border border-[#e1dcc9]/10 bg-black/40 px-3.5 py-1 text-[9px] uppercase tracking-[0.25em] text-[#e1dcc9]/85 backdrop-blur-md">
             <Activity className="w-3 h-3 text-[#e1dcc9] animate-pulse" />
-            AI SECURE GATEWAY
+            SECURE GATEWAY
           </span>
         </div>
 
@@ -242,12 +242,12 @@ const AuthLayout = () => {
             <div className="flex items-center gap-2 text-[#e1dcc9] mb-3">
               <Sparkles className="w-4 h-4" />
               <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#e1dcc9]/80">
-                Curated AI Commerce
+                Curated Premium Commerce
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white font-oswald leading-none">
               Shop Smarter <br className="hidden sm:inline" />
-              With <span className="gradient-text">AI Intelligence</span>
+              With <span className="gradient-text">Premium Commerce</span>
             </h1>
             <p className="mt-3 max-w-sm text-xs leading-relaxed text-[#e1dcc9]/60 font-light">
               Experience the future of multi-vendor drops, real-time bid synchronizations, and luxury fashion technology at your fingertips.

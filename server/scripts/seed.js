@@ -5,7 +5,7 @@ const User = require("../models/User.model");
 const Category = require("../models/Category.model");
 const Product = require("../models/Product.model");
 
-const MONGO_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/ai-vendor-marketplace";
+const MONGO_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/vendor-marketplace";
 
 
 const ELECTRONICS_IMAGES = [
@@ -68,13 +68,13 @@ const ELECTRONICS_TITLES = [
   "Titan-X Liquid Cooled GPU Node",
   "OmniVibe Neural VR Visor",
   "Quantum Slate Pro Tablet",
-  "Vortex Pocket AI Communicator",
+  "Vortex Pocket Smart Communicator",
   "OmniCore 16-Core Neural Processor",
   "HoloDisplay Curved Screen Monitor",
   "AeroCharge GaN Fast Charger",
   "XenoPad Mechanical Macro Deck",
   "Specter RGB Gaming Console",
-  "Synapse AI Accelerator Card",
+  "Synapse Neural Accelerator Card",
   "OmniStream Capture Device",
   "Helix Cold-Plate Liquid Cooler",
   "Apex Wireless Charging Dock",
@@ -293,12 +293,12 @@ const seedData = async () => {
     console.log("Creating Premium Vendors...");
     const sellers = await User.create([
       {
-        name: "Acoustix AI Labs",
+        name: "Acoustix Sound Labs",
         email: "acoustix@seller.com",
         password: sellerPassword,
         role: "seller",
         isVendorApproved: true,
-        storeName: "Acoustix AI Labs",
+        storeName: "Acoustix Sound Labs",
         storeDescription: "Next-generation intelligent audio systems, neural noise-cancelling equipment, and wearable speakers.",
         vendorLocation: "Colaba, Mumbai",
         isActive: true,
@@ -442,7 +442,7 @@ const seedData = async () => {
       },
       {
         title: "Aero X14 Titanium Foldable Phone",
-        description: "The next evolution of cellular devices. The Aero X14 folds out from a sleek, palm-sized bar into a brilliant 8.2-inch ultra-thin glass workspace. Designed for ultimate mobile productivity, running custom secure localized AI nodes on-device.",
+        description: "The next evolution of cellular devices. The Aero X14 folds out from a sleek, palm-sized bar into a brilliant 8.2-inch ultra-thin glass workspace. Designed for ultimate mobile productivity, running custom secure localized nodes on-device.",
         price: 1699,
         discountedPrice: 1899,
         stock: 15,
@@ -606,8 +606,8 @@ const seedData = async () => {
         ]
       },
       {
-        title: "Chronos AI Fitness Watch Pro",
-        description: "A luxury smartwatch blending classic horology with advanced artificial intelligence. Includes localized offline coaching analytics, continuous health logs, active GPS, and a beautiful tactile physical control bezel.",
+        title: "Chronos Smart Fitness Watch Pro",
+        description: "A luxury smartwatch blending classic horology with advanced smart analytics. Includes localized offline coaching analytics, continuous health logs, active GPS, and a beautiful tactile physical control bezel.",
         price: 499,
         discountedPrice: 599,
         stock: 25,
@@ -688,7 +688,7 @@ const seedData = async () => {
       },
       {
         title: "Aura TWS Noise-Free Earbuds",
-        description: "Ultralight, secure-fit true wireless earbuds. Includes smart sweat protection, intuitive gesture side controls, custom sound profile mapping via on-device AI tuning, and a rapid magnetic charging cradle.",
+        description: "Ultralight, secure-fit true wireless earbuds. Includes smart sweat protection, intuitive gesture side controls, custom sound profile mapping via on-device intelligent tuning, and a rapid magnetic charging cradle.",
         price: 189,
         discountedPrice: 220,
         stock: 55,
@@ -972,7 +972,7 @@ const seedData = async () => {
 
     const genElectronics = generateCategoryProducts(
       "Electronics", categories["Electronics"], omnitech, "Andheri, Mumbai",
-      ELECTRONICS_TITLES, ["Smartphones", "Laptops", "Gaming Accessories", "AI Gadgets"], ELECTRONICS_IMAGES,
+      ELECTRONICS_TITLES, ["Smartphones", "Laptops", "Gaming Accessories", "Smart Gadgets"], ELECTRONICS_IMAGES,
       "Experience elite computing capabilities, advanced thermal regulation, and high refresh rate visual engines.", 499,
       ["electronics", "device", "pc", "tech"]
     );

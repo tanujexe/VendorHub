@@ -11,7 +11,7 @@ const AI_TAG_DICTIONARY = {
   watch: ["smartwatch", "watch", "wearable", "fitness tracker"],
   headphone: ["headphones", "audio", "earbuds", "earphones", "headset"],
   backpack: ["backpack", "bag", "laptop bag", "travel pack"],
-  gadget: ["ai gadget", "smart device", "future tech", "connected device"],
+  gadget: ["smart gadget", "smart device", "future tech", "connected device"],
 };
 
 const toTerms = (value = "") =>

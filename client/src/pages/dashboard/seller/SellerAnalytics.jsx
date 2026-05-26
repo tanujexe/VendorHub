@@ -97,13 +97,13 @@ export default function SellerAnalytics() {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h1 className="text-3xl font-bold tracking-tight text-foreground flex items-center gap-2">
-            Insight Studio
-            <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#e1dcc9]/10 border border-[#e1dcc9]/25 text-[#e1dcc9] flex items-center gap-1 shadow-glow-sm">
-              <Sparkles className="w-3 h-3 text-[#e1dcc9]" /> Real-time Projections
+            Store Analytics
+            <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#e1dcc9]/10 border border-[#e1dcc9]/25 text-[#e1dcc9] flex items-center gap-1">
+              <Sparkles className="w-3 h-3 text-[#e1dcc9]" /> Live Data
             </span>
           </h1>
           <p className="text-muted-foreground mt-1 text-sm">
-            Deep analytical models mapping revenue, velocity, conversion rate, and inventory performance.
+            Track your sales, order counts, best-selling products, and revenue trends.
           </p>
         </div>
       </div>
@@ -118,7 +118,7 @@ export default function SellerAnalytics() {
             <IndianRupee className="w-6 h-6 text-[#e1dcc9]" />
           </div>
           <div>
-            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">Weekly Sales Gross</p>
+            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">Weekly Sales</p>
             <h3 className="text-2xl font-black text-foreground mt-1">₹{totalWeeklyRevenue.toLocaleString("en-IN")}</h3>
           </div>
         </motion.div>
@@ -131,8 +131,8 @@ export default function SellerAnalytics() {
             <TrendingUp className="w-6 h-6 text-[#e1dcc9]" />
           </div>
           <div>
-            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">Orders Velocity</p>
-            <h3 className="text-2xl font-black text-foreground mt-1">{totalWeeklyOrders} total checkouts</h3>
+            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">Orders This Week</p>
+            <h3 className="text-2xl font-black text-foreground mt-1">{totalWeeklyOrders} orders</h3>
           </div>
         </motion.div>
 
@@ -144,7 +144,7 @@ export default function SellerAnalytics() {
             <Package className="w-6 h-6 text-[#e1dcc9]" />
           </div>
           <div>
-            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">Avg Ticket Size</p>
+            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">Avg Order Value</p>
             <h3 className="text-2xl font-black text-foreground mt-1">
               ₹{totalWeeklyOrders > 0 ? Math.round(totalWeeklyRevenue / totalWeeklyOrders).toLocaleString("en-IN") : 0}
             </h3>
@@ -165,8 +165,8 @@ export default function SellerAnalytics() {
               <Calendar className="w-4 h-4 text-[#e1dcc9]" />
             </div>
             <div>
-              <h3 className="font-bold text-foreground text-sm">Weekly Gross & Orders</h3>
-              <p className="text-[10px] text-muted-foreground">Rolling 7-day sales and transaction count</p>
+              <h3 className="font-bold text-foreground text-sm">Weekly Sales & Orders</h3>
+              <p className="text-[10px] text-muted-foreground">Last 7 days of sales and order volume</p>
             </div>
           </div>
 
@@ -216,8 +216,8 @@ export default function SellerAnalytics() {
               <BarChart3 className="w-4 h-4 text-[#e1dcc9]" />
             </div>
             <div>
-              <h3 className="font-bold text-foreground text-sm">Best-Selling Listings</h3>
-              <p className="text-[10px] text-muted-foreground">Top-performing catalog items sorted by units sold</p>
+              <h3 className="font-bold text-foreground text-sm">Top Products</h3>
+              <p className="text-[10px] text-muted-foreground">Best-selling items sorted by units sold</p>
             </div>
           </div>
 
