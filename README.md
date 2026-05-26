@@ -9,19 +9,7 @@
   [![Express.js](https://img.shields.io/badge/Express.js-4.18-lightgrey.svg?style=for-the-badge)](https://expressjs.com)
   [![MongoDB](https://img.shields.io/badge/MongoDB-Database-emerald.svg?style=for-the-badge&logo=mongodb)](https://mongodb.com)
   [![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-
-  <p align="center">
-    <strong>A next-generation, high-performance, and scalable multi-vendor e-commerce platform curated for elite boutique curators and patron collectors, featuring predictive analytics and production-grade security.</strong>
-  </p>
-
-  <h4>
-    <a href="#-project-overview">Overview</a> ✦
-    <a href="#-system-architecture">Architecture</a> ✦
-    <a href="#-core-features">Features</a> ✦
-    <a href="#-installation--setup">Setup</a> ✦
-    <a href="#-api-documentation">API Docs</a> ✦
-    <a href="#-security-features">Security</a>
-  </h4>
+ 
 </div>
 
 ---
