@@ -116,26 +116,6 @@ graph TD
     Controller -->|Checkout Sessions| Razor
 ```
 
-### 🧠 Dynamic AI Search & Recommendation Data Flow
-
-```mermaid
-sequenceDiagram
-    participant User as Collector Client
-    participant Search as AI Search Input
-    participant History as Local Profile Storage
-    participant API as Express recommendations.routes.js
-    participant DB as MongoDB Catalog
-
-    User->>Search: Types keyword "pho"
-    Search->>Search: Match predictive Map (e.g. smartphones, iPhones)
-    Search-->>User: Renders predictive suggestions instantly
-    User->>User: Clicks Product Detail Page
-    User->>History: Records productId + timestamp
-    History->>API: Synchronize browsing history matrix
-    API->>DB: Query related category vector indexes
-    DB-->>API: Return similar boutique products
-    API-->>User: Renders "Recommended for You" carousel
-```
 
 ---
 
